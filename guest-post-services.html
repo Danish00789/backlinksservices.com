@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<!--
+  BacklinksServices.com — Guest Post Services
+  Professional guest post link building for businesses & agencies
+  Built with vanilla HTML, CSS, and JavaScript — no dependencies
+  Design consistent with BacklinksServices.com homepage
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Post Services | Buy Guest Posts for SEO from $70/Link</title>
+  <meta name="description" content="Professional guest post services for SEO. Real articles on vetted sites in your niche. White-label ready. From $70/link. Guaranteed placement.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1E293B; background: #FFFFFF; line-height: 1.7; font-size: 1rem;
+      overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    img, svg { display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-dark  { background: #0F172A; color: #FFFFFF; }
+    .section-light { background: #F8FAFC; }
+    .section-white { background: #FFFFFF; }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.from-left  { transform: translateX(-40px); }
+    .reveal.from-right { transform: translateX(40px); }
+    .reveal.scale-in   { transform: scale(0.92); }
+    .reveal.revealed   { opacity: 1; transform: none; }
+
+    .stagger-children > * { opacity: 0; transform: translateY(28px);
+      transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1); }
+    .stagger-children.revealed > *:nth-child(1) { transition-delay: 0.05s; }
+    .stagger-children.revealed > *:nth-child(2) { transition-delay: 0.13s; }
+    .stagger-children.revealed > *:nth-child(3) { transition-delay: 0.21s; }
+    .stagger-children.revealed > *:nth-child(4) { transition-delay: 0.29s; }
+    .stagger-children.revealed > *:nth-child(5) { transition-delay: 0.37s; }
+    .stagger-children.revealed > *:nth-child(6) { transition-delay: 0.45s; }
+    .stagger-children.revealed > * { opacity: 1; transform: none; }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #D97706; color: #FFFFFF; font-weight: 600; font-size: 1rem;
+      padding: 14px 32px; border-radius: 50px; border: none;
+      position: relative; overflow: hidden; isolation: isolate;
+      transition: background 0.25s ease, transform 0.18s ease, box-shadow 0.25s ease;
+      white-space: nowrap; cursor: pointer;
+    }
+    .btn-primary::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:hover {
+      background: #B45309; transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(217,119,6,0.40), 0 2px 8px rgba(217,119,6,0.25);
+    }
+    .btn-primary:active { transform: translateY(0); box-shadow: none; }
+    .btn-primary:focus-visible { outline: 3px solid #D97706; outline-offset: 3px; }
+
+    .ripple {
+      position: absolute; border-radius: 50%;
+      background: rgba(255,255,255,0.35); transform: scale(0);
+      animation: ripple-out 0.6s linear; pointer-events: none;
+    }
+    @keyframes ripple-out {
+      to { transform: scale(4); opacity: 0; }
+    }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #FFFFFF; font-weight: 600; font-size: 1rem;
+      padding: 14px 32px; border-radius: 50px; border: 2px solid rgba(255,255,255,0.35);
+      position: relative; overflow: hidden; isolation: isolate;
+      transition: border-color 0.25s ease, background 0.25s ease, transform 0.18s ease;
+      white-space: nowrap;
+    }
+    .btn-secondary::after {
+      content: ''; position: absolute; inset: 0; border-radius: 50px;
+      background: rgba(255,255,255,0); transition: background 0.25s ease;
+    }
+    .btn-secondary:hover { border-color: #FFFFFF; transform: translateY(-2px); }
+    .btn-secondary:hover::after { background: rgba(255,255,255,0.06); }
+    .btn-secondary:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
+
+    .btn-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: #D97706; font-weight: 600; font-size: 0.9375rem;
+      transition: gap 0.25s ease, color 0.2s ease;
+    }
+    .btn-link:hover { gap: 12px; color: #B45309; }
+    .btn-link svg { transition: transform 0.25s ease; }
+    .btn-link:hover svg { transform: translateX(3px); }
+    .btn-link:focus-visible { outline: 2px solid #D97706; outline-offset: 2px; border-radius: 4px; }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 0;
+      transition: background 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+    }
+    .nav.scrolled {
+      background: rgba(15,23,42,0.96); backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px); padding: 10px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.22);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 1.1875rem; font-weight: 800; color: #FFFFFF; letter-spacing: -0.03em;
+      transition: transform 0.25s ease;
+    }
+    .nav-logo:hover { transform: translateX(-1px); }
+    .nav-logo-mark { flex-shrink: 0; transition: transform 0.35s ease; }
+    .nav-logo:hover .nav-logo-mark { transform: rotate(-12deg); }
+    .nav-logo-text { display: flex; align-items: baseline; gap: 1px; }
+    .nav-logo-text .dot { color: #D97706; display: inline-block; }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.78); font-size: 0.9375rem; font-weight: 500;
+      position: relative; transition: color 0.2s ease;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px;
+      background: #D97706; border-radius: 2px; transition: width 0.25s ease;
+    }
+    .nav-links a:hover { color: #FFFFFF; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:focus-visible { outline: 2px solid #D97706; outline-offset: 4px; border-radius: 2px; }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-trigger {
+      display: flex; align-items: center; gap: 4px;
+      color: rgba(255,255,255,0.78); font-size: 0.9375rem; font-weight: 500;
+      cursor: pointer; transition: color 0.2s ease; background: none; border: none; font-family: inherit;
+    }
+    .nav-dropdown-trigger:hover { color: #FFFFFF; }
+    .nav-dropdown-trigger svg { transition: transform 0.25s ease; }
+    .nav-dropdown.open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      position: absolute; top: calc(100% + 14px); left: -14px;
+      background: #FFFFFF; border-radius: 14px; padding: 8px; min-width: 200px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.06);
+      opacity: 0; visibility: hidden; transform: translateY(-10px) scale(0.97);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+      transform-origin: top left;
+    }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+    .nav-dropdown-menu a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; color: #1E293B; font-size: 0.9375rem; font-weight: 500;
+      border-radius: 8px; transition: background 0.15s ease, color 0.15s ease;
+    }
+    .nav-dropdown-menu a::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: #D97706; flex-shrink: 0; opacity: 0; transition: opacity 0.15s ease;
+    }
+    .nav-dropdown-menu a:hover { background: #FFF8EC; color: #D97706; }
+    .nav-dropdown-menu a:hover::before { opacity: 1; }
+
+    .nav-cta { margin-left: 8px; }
+    .nav-cta .btn-primary { padding: 10px 22px; font-size: 0.9375rem; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; padding: 6px;
+      cursor: pointer; background: none; border: none; z-index: 1100;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px; background: #FFFFFF; border-radius: 2px;
+      transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease, width 0.25s ease;
+    }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; width: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed; top: 0; right: -100%; width: 100%; max-width: 380px; height: 100vh;
+      background: #0F172A; z-index: 1050; padding: 80px 32px 32px;
+      transition: right 0.38s cubic-bezier(0.4,0,0.2,1); overflow-y: auto;
+    }
+    .mobile-menu.open { right: 0; }
+    .mobile-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 1040;
+      opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
+      backdrop-filter: blur(3px);
+    }
+    .mobile-overlay.open { opacity: 1; visibility: visible; }
+    .mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
+    .mobile-menu nav a, .mobile-menu .mobile-dropdown-trigger {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0; color: rgba(255,255,255,0.82); font-size: 1.125rem; font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: color 0.2s ease, padding-left 0.2s ease;
+      background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-family: inherit; width: 100%; cursor: pointer;
+    }
+    .mobile-menu nav a:hover, .mobile-menu .mobile-dropdown-trigger:hover {
+      color: #FFFFFF; padding-left: 6px;
+    }
+    .mobile-sub-menu { display: none; padding-left: 16px; }
+    .mobile-sub-menu.open { display: block; }
+    .mobile-sub-menu a { font-size: 1rem !important; padding: 10px 0 !important; color: rgba(255,255,255,0.6) !important; }
+    .mobile-menu .btn-primary { width: 100%; justify-content: center; margin-top: 28px; padding: 16px 32px; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      background: #0F172A; padding: 160px 0 100px;
+      position: relative; overflow: hidden; min-height: 80vh; display: flex; align-items: center;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -40%; right: -15%; width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(217,119,6,0.18) 0%, rgba(217,119,6,0.03) 40%, transparent 65%);
+      pointer-events: none; animation: pulse-glow 6s ease-in-out infinite;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -35%; left: -10%; width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, rgba(99,102,241,0.02) 40%, transparent 65%);
+      pointer-events: none; animation: pulse-glow 8s ease-in-out infinite reverse;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.08); opacity: 0.7; }
+    }
+
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 64px 64px; pointer-events: none;
+      mask-image: radial-gradient(80% 80% at 50% 50%, #000, transparent);
+      -webkit-mask-image: radial-gradient(80% 80% at 50% 50%, #000, transparent);
+      animation: grid-shift 20s linear infinite;
+    }
+    @keyframes grid-shift {
+      from { background-position: 0 0; }
+      to   { background-position: 64px 64px; }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; text-align: center; }
+
+    .hero h1 {
+      font-size: 3.5rem; font-weight: 800; line-height: 1.1; color: #FFFFFF;
+      letter-spacing: -0.03em; margin-bottom: 24px;
+      opacity: 0; animation: hero-enter 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s forwards;
+    }
+    .hero h1 .highlight {
+      position: relative; display: inline-block; color: #D97706;
+    }
+    .hero h1 .highlight::after {
+      content: ''; position: absolute; bottom: 2px; left: 0; width: 0; height: 3px;
+      background: #D97706; border-radius: 2px; opacity: 0.5;
+      animation: underline-draw 0.8s ease 1.1s forwards;
+    }
+    @keyframes underline-draw { to { width: 100%; } }
+
+    .hero-sub {
+      font-size: 1.1875rem; color: #94A3B8; line-height: 1.7;
+      max-width: 640px; margin: 0 auto 40px;
+      opacity: 0; animation: hero-enter 0.9s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
+    }
+    .hero-ctas {
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      flex-wrap: wrap; margin-bottom: 48px;
+      opacity: 0; animation: hero-enter 0.9s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;
+    }
+    .hero-trust {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      color: #64748B; font-size: 0.9375rem;
+      opacity: 0; animation: hero-enter 0.9s cubic-bezier(0.22,1,0.36,1) 0.65s forwards;
+      white-space: nowrap;
+    }
+    @media (max-width: 767px) {
+      .hero-trust { white-space: normal; text-align: center; }
+    }
+    .hero-trust svg { flex-shrink: 0; animation: star-spin 2s ease 1.5s both; }
+    @keyframes star-spin {
+      from { transform: rotate(-180deg) scale(0); opacity: 0; }
+      to   { transform: rotate(0deg) scale(1); opacity: 1; }
+    }
+    @keyframes hero-enter {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================================
+       SECTION HEADER
+    ============================================================ */
+    .section-header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+    .section-header h2 {
+      font-size: 2.5rem; font-weight: 700; color: #0F172A;
+      letter-spacing: -0.02em; margin-bottom: 16px; line-height: 1.2;
+    }
+    .section-dark .section-header h2 { color: #FFFFFF; }
+
+    .section-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; font-weight: 600; color: #D97706;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;
+    }
+    .section-badge .badge-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #D97706;
+      animation: badge-pulse 2s ease-in-out infinite;
+    }
+    @keyframes badge-pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%       { transform: scale(1.5); opacity: 0.5; }
+    }
+
+    /* ============================================================
+       WHAT ARE GUEST POSTS — REDESIGNED
+       Two-column layout: definition left, stat/pricing box right
+    ============================================================ */
+    .definition { padding: 80px 0; }
+    .definition-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+      align-items: start; max-width: 1000px; margin: 0 auto;
+    }
+    .definition-text p {
+      font-size: 1.125rem; color: #1E293B; line-height: 1.8;
+    }
+    .definition-stat {
+      background: #F8FAFC; border: 1px solid #E2E8F0;
+      border-radius: 16px; padding: 32px;
+      position: relative; overflow: hidden;
+    }
+    .definition-stat::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #D97706, #F59E0B);
+    }
+    .definition-stat-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: #FFF8EC; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; color: #D97706;
+    }
+    .definition-stat-label {
+      font-size: 0.75rem; font-weight: 700; color: #D97706;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;
+    }
+    .definition-stat p {
+      font-size: 1rem; color: #1E293B; line-height: 1.7;
+    }
+    .definition-stat p strong { color: #0F172A; }
+
+    /* ============================================================
+       HOW IT WORKS
+    ============================================================ */
+    .how-it-works { padding: 80px 0; background: #F8FAFC; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; position: relative; }
+    .steps-grid::before {
+      content: ''; position: absolute; top: 22px; left: 12.5%; right: 12.5%; height: 2px;
+      background: linear-gradient(90deg, #D97706 var(--progress, 0%), #E2E8F0 var(--progress, 0%));
+      transition: --progress 1.2s ease; z-index: 0;
+    }
+    .step { text-align: center; position: relative; z-index: 1; }
+    .step-circle {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: #F8FAFC; border: 2px solid #E2E8F0;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; transition: background 0.4s ease, border-color 0.4s ease, transform 0.35s ease;
+    }
+    .step.active .step-circle {
+      background: #D97706; border-color: #D97706;
+      transform: scale(1.15); box-shadow: 0 0 0 6px rgba(217,119,6,0.15);
+    }
+    .step-number {
+      font-size: 1rem; font-weight: 800; color: #94A3B8; line-height: 1;
+      transition: color 0.3s ease;
+    }
+    .step.active .step-number { color: #FFFFFF; }
+    .step h3 { font-size: 1.125rem; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
+    .step p { font-size: 0.9375rem; color: #64748B; line-height: 1.65; }
+    .step-connector { position: absolute; top: 20px; right: -16px; color: #D97706; opacity: 0.25; z-index: 2; }
+
+    /* ============================================================
+       WHY DIFFERENT — REDESIGNED
+       4-column row with top accent bar and clean icon containers
+    ============================================================ */
+    .why-different { padding: 80px 0; background: #FFFFFF; }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .why-card {
+      padding: 32px 24px; background: #FFFFFF; border: 1px solid #E2E8F0;
+      border-radius: 16px; position: relative; overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .why-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #D97706, #F59E0B);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .why-card:hover::before { transform: scaleX(1); }
+    .why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(217,119,6,0.10), 0 4px 12px rgba(0,0,0,0.04);
+      border-color: #D97706;
+    }
+    .why-card-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: #FFF8EC; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; color: #D97706;
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background 0.3s ease;
+    }
+    .why-card:hover .why-card-icon {
+      transform: scale(1.1) rotate(-6deg);
+      background: #D97706; color: #FFFFFF;
+    }
+    .why-card h3 { font-size: 1.125rem; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
+    .why-card p { color: #64748B; font-size: 0.9375rem; line-height: 1.7; }
+
+    /* ============================================================
+       EXAMPLE
+    ============================================================ */
+    .example { padding: 80px 0; background: #F8FAFC; }
+    .example-card {
+      max-width: 760px; margin: 0 auto;
+      background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 44px;
+      position: relative; overflow: hidden;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .example-card:hover { box-shadow: 0 12px 48px rgba(0,0,0,0.08); transform: translateY(-4px); }
+    .example-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: linear-gradient(180deg, #D97706, #F59E0B);
+    }
+    .example-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; font-weight: 700; color: #FFFFFF;
+      text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px;
+      padding: 7px 16px; border-radius: 50px;
+      background: linear-gradient(120deg, #D97706, #F59E0B);
+      box-shadow: 0 6px 18px -6px rgba(217,119,6,0.5);
+    }
+    .example-card h3 { font-size: 1.25rem; font-weight: 700; color: #0F172A; margin-bottom: 12px; }
+    .example-card p { font-size: 1rem; color: #64748B; line-height: 1.7; }
+    .example-metrics {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 24px;
+    }
+    .example-metric {
+      text-align: center; padding: 16px;
+      background: #F8FAFC; border-radius: 12px; border: 1px solid #E2E8F0;
+    }
+    .example-metric-value {
+      font-size: 1.5rem; font-weight: 800; color: #D97706;
+      line-height: 1.1; margin-bottom: 4px;
+    }
+    .example-metric-label { font-size: 0.8125rem; color: #64748B; font-weight: 500; }
+
+    /* ============================================================
+       PRICING — Card-based with motion effects
+    ============================================================ */
+    .pricing { padding: 80px 0; background: #FFFFFF; }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      max-width: 1000px; margin: 0 auto;
+    }
+    .pricing-card {
+      background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px;
+      padding: 40px 32px; position: relative; display: flex; flex-direction: column;
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
+                  box-shadow 0.4s cubic-bezier(0.22,1,0.36,1),
+                  border-color 0.3s ease;
+      overflow: hidden; isolation: isolate;
+    }
+    .pricing-card::before {
+      content: ''; position: absolute; inset: 0; border-radius: 20px;
+      background: linear-gradient(135deg, rgba(217,119,6,0.03) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.4s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.10), 0 8px 20px rgba(0,0,0,0.04);
+      border-color: #D97706;
+    }
+    .pricing-card:hover::before { opacity: 1; }
+
+    /* Shimmer sweep on hover */
+    .pricing-card::after {
+      content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: skewX(-20deg); transition: left 0.6s ease;
+    }
+    .pricing-card:hover::after { left: 160%; }
+
+    .pricing-card-badge {
+      position: absolute; top: 16px; right: 16px;
+      background: #D97706; color: #FFFFFF; font-size: 0.6875rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 50px; text-transform: uppercase;
+      letter-spacing: 0.08em; box-shadow: 0 4px 12px rgba(217,119,6,0.4);
+      z-index: 2; opacity: 0; transform: translateY(-8px) scale(0.9);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .pricing-card.popular .pricing-card-badge {
+      opacity: 1; transform: translateY(0) scale(1);
+    }
+
+    .pricing-card-tier {
+      font-size: 0.8125rem; font-weight: 600; color: #D97706;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;
+    }
+    .pricing-card-name {
+      font-size: 1.5rem; font-weight: 800; color: #0F172A;
+      margin-bottom: 4px; letter-spacing: -0.02em;
+    }
+    .pricing-card-dr {
+      font-size: 0.9375rem; color: #64748B; margin-bottom: 20px;
+    }
+    .pricing-card-price {
+      font-size: 3rem; font-weight: 800; color: #0F172A;
+      line-height: 1; margin-bottom: 4px; letter-spacing: -0.03em;
+      transition: color 0.3s ease;
+    }
+    .pricing-card:hover .pricing-card-price { color: #D97706; }
+    .pricing-card-price span {
+      font-size: 1.125rem; font-weight: 500; color: #64748B;
+    }
+    .pricing-card-per {
+      font-size: 0.875rem; color: #64748B; margin-bottom: 24px;
+    }
+    .pricing-card-divider {
+      height: 1px; background: #E2E8F0; margin-bottom: 24px;
+    }
+    .pricing-card-features {
+      list-style: none; padding: 0; margin: 0 0 28px; flex: 1;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .pricing-card-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.9375rem; color: #1E293B; line-height: 1.5;
+    }
+    .pricing-card-features li.pricing-feature-highlight {
+      font-size: 1rem; color: #0F172A; font-weight: 600;
+      padding: 8px 12px; background: #FFF8EC; border-radius: 8px;
+      border: 1px solid #FDE68A; margin-bottom: 4px;
+    }
+    .pricing-card-features li.pricing-feature-highlight strong {
+      color: #D97706;
+    }
+    .pricing-card-features li svg {
+      flex-shrink: 0; margin-top: 3px; color: #059669;
+    }
+    .pricing-card .btn-primary {
+      width: 100%; justify-content: center; padding: 16px 24px;
+    }
+
+    /* Popular card — elevated */
+    .pricing-card.popular {
+      border-color: #D97706; border-width: 2px;
+      transform: scale(1.04); z-index: 1;
+      box-shadow: 0 8px 32px rgba(217,119,6,0.12);
+    }
+    .pricing-card.popular:hover {
+      transform: scale(1.04) translateY(-8px);
+      box-shadow: 0 24px 64px rgba(217,119,6,0.18), 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    /* ============================================================
+       PRICING INCLUDES — REDESIGNED
+       Row of pill badges with checkmark icons
+    ============================================================ */
+    .pricing-includes {
+      margin-top: 40px; padding: 28px 32px;
+      background: #F8FAFC; border-radius: 16px; border: 1px solid #E2E8F0;
+      max-width: 800px; margin-left: auto; margin-right: auto;
+    }
+    .pricing-includes-label {
+      font-size: 0.9375rem; font-weight: 600; color: #0F172A;
+      margin-bottom: 16px; text-align: center;
+    }
+    .pricing-includes-pills {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    }
+    .pricing-includes-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; background: #FFFFFF; border: 1px solid #E2E8F0;
+      border-radius: 50px; font-size: 0.875rem; font-weight: 500; color: #1E293B;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .pricing-includes-pill:hover {
+      border-color: #D97706; box-shadow: 0 2px 8px rgba(217,119,6,0.10);
+    }
+    .pricing-includes-pill svg {
+      flex-shrink: 0; color: #059669;
+    }
+
+    /* ============================================================
+       PRICING WHITELABEL — REDESIGNED
+       Premium offer card with Agency Offer badge
+    ============================================================ */
+    .pricing-whitelabel-wrapper {
+      margin-top: 24px;
+      max-width: 800px; margin-left: auto; margin-right: auto;
+      position: relative;
+      border: 1.5px solid #D97706; border-radius: 16px;
+      background: linear-gradient(135deg, #FFF8EC, #FFFBF2);
+      padding: 32px 36px;
+    }
+    .pricing-whitelabel-wrapper .pricing-whitelabel-badge {
+      position: absolute; top: 0; left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.6875rem; font-weight: 700; color: #FFFFFF;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 4px 14px; border-radius: 50px;
+      background: #D97706; white-space: nowrap; z-index: 2;
+    }
+    .pricing-whitelabel {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      position: relative;
+    }
+    .pricing-whitelabel-text p {
+      font-size: 1rem; color: #B45309; font-weight: 600; margin: 0;
+    }
+    .pricing-whitelabel-text p strong { color: #0F172A; }
+    .pricing-whitelabel .btn-primary {
+      flex-shrink: 0; padding: 12px 28px; font-size: 0.9375rem;
+    }
+
+    /* ============================================================
+       WHITE-LABEL SECTION — REDESIGNED
+       Shorter text segments, decorative element, better spacing
+    ============================================================ */
+    .whitelabel {
+      background: #0F172A; padding: 80px 0;
+      position: relative; overflow: hidden;
+    }
+    .whitelabel::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent 0%, #D97706 50%, transparent 100%);
+    }
+    .whitelabel::after {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%); width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(217,119,6,0.06) 0%, transparent 70%);
+      pointer-events: none; animation: pulse-glow 5s ease-in-out infinite;
+    }
+    .whitelabel-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; text-align: center; }
+    .whitelabel h2 {
+      font-size: 2.25rem; font-weight: 700; color: #FFFFFF;
+      margin-bottom: 20px; letter-spacing: -0.02em;
+    }
+    .whitelabel-text-segment {
+      color: #94A3B8; font-size: 1.0625rem; line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .whitelabel-text-segment:last-of-type {
+      margin-bottom: 32px;
+    }
+    .whitelabel-divider {
+      width: 48px; height: 2px; background: #D97706;
+      margin: 0 auto 20px; border-radius: 2px;
+    }
+
+    /* ============================================================
+       CASE STUDY
+    ============================================================ */
+    .case-study-section { padding: 80px 0; background: #F8FAFC; }
+    .case-study-card {
+      max-width: 760px; margin: 0 auto;
+      background: #FFFFFF; border: 2px solid #D97706; border-radius: 18px; padding: 44px;
+      position: relative; overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+    .case-study-card:hover { box-shadow: 0 12px 48px rgba(217,119,6,0.12); }
+    .case-study-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: linear-gradient(180deg, #D97706, #F59E0B);
+    }
+    .case-study-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; font-weight: 700; color: #FFFFFF;
+      text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px;
+      padding: 7px 16px; border-radius: 50px;
+      background: linear-gradient(120deg, #D97706, #F59E0B);
+      box-shadow: 0 6px 18px -6px rgba(217,119,6,0.5);
+    }
+    .case-study-card h3 { font-size: 1.375rem; font-weight: 700; color: #0F172A; margin-bottom: 14px; }
+    .case-study-card p { font-size: 1rem; color: #64748B; line-height: 1.7; margin-bottom: 32px; }
+    .case-study-metrics { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .case-metric {
+      text-align: center; padding: 20px;
+      background: #F8FAFC; border-radius: 12px; border: 1px solid #E2E8F0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .case-metric:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+    .case-metric-value {
+      font-size: 2.125rem; font-weight: 800; color: #059669;
+      line-height: 1.1; margin-bottom: 4px; letter-spacing: -0.02em;
+    }
+    .case-metric-label { font-size: 0.8125rem; color: #64748B; font-weight: 500; }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq { padding: 80px 0; background: #FFFFFF; }
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid #E2E8F0;
+      transition: padding 0.2s ease;
+    }
+    .faq-question {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; padding: 24px 0; text-align: left;
+      font-size: 1.0625rem; font-weight: 600; color: #0F172A; cursor: pointer;
+      transition: color 0.2s ease; background: none; border: none; font-family: inherit; gap: 16px;
+    }
+    .faq-question:hover { color: #D97706; }
+    .faq-question:focus-visible { outline: 2px solid #D97706; outline-offset: 2px; border-radius: 4px; }
+    .faq-toggle {
+      width: 30px; height: 30px; flex-shrink: 0; display: flex; align-items: center;
+      justify-content: center; color: #D97706; border-radius: 50%;
+      border: 1.5px solid rgba(217,119,6,0.3); background: rgba(217,119,6,0.04);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), background 0.2s ease, border-color 0.2s ease;
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg); background: #D97706; border-color: #D97706; color: #FFFFFF;
+    }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+    .faq-item.open .faq-answer { max-height: 500px; }
+    .faq-answer-inner {
+      padding-bottom: 24px; font-size: 1rem; color: #64748B; line-height: 1.7;
+    }
+
+    /* ============================================================
+       FINAL CTA
+    ============================================================ */
+    .final-cta {
+      background: #0F172A; padding: 110px 0; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .final-cta::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%); width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(217,119,6,0.09) 0%, transparent 70%);
+      pointer-events: none; animation: pulse-glow 5s ease-in-out infinite;
+    }
+    .final-cta-content { position: relative; z-index: 1; }
+    .final-cta h2 {
+      font-size: 2.875rem; font-weight: 800; color: #FFFFFF;
+      letter-spacing: -0.02em; margin-bottom: 16px; line-height: 1.15;
+    }
+    .final-cta p {
+      color: #94A3B8; font-size: 1.0625rem; max-width: 640px;
+      margin: 0 auto 36px; line-height: 1.7;
+    }
+    .final-cta .btn-primary { font-size: 1.125rem; padding: 20px 48px; }
+    .final-cta-or { margin-top: 18px; color: #64748B; font-size: 0.9375rem; }
+    .final-cta-or a { color: #D97706; font-weight: 600; transition: color 0.2s ease; }
+    .final-cta-or a:hover { color: #F59E0B; }
+
+    /* ============================================================
+       CROSS-SELL
+    ============================================================ */
+    .cross-sell { padding: 80px 0; background: #F8FAFC; }
+    .cross-sell-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .cross-sell-card {
+      background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px;
+      padding: 36px 32px; position: relative; display: flex; flex-direction: column;
+      transition: transform 0.32s cubic-bezier(0.22,1,0.36,1),
+                  box-shadow 0.32s cubic-bezier(0.22,1,0.36,1),
+                  border-color 0.32s ease;
+    }
+    .cross-sell-card:hover {
+      transform: translateY(-4px); box-shadow: 0 20px 56px rgba(0,0,0,0.09); border-color: #D97706;
+    }
+    .cross-sell-card h3 { font-size: 1.25rem; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
+    .cross-sell-card p { color: #64748B; font-size: 0.9375rem; line-height: 1.7; margin-bottom: 16px; flex: 1; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer { background: #0F172A; padding: 64px 0 0; border-top: 2px solid #D97706; }
+    .footer-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; padding-bottom: 48px; }
+    .footer-col h4 {
+      font-size: 0.875rem; font-weight: 600; color: #FFFFFF;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;
+    }
+    .footer-col a {
+      display: flex; align-items: center; gap: 0;
+      color: #64748B; font-size: 0.9375rem; padding: 5px 0;
+      transition: color 0.2s ease, gap 0.2s ease; position: relative;
+    }
+    .footer-col a::before {
+      content: ''; width: 0; height: 1px; background: #D97706;
+      transition: width 0.2s ease; margin-right: 0;
+    }
+    .footer-col a:hover { color: #FFFFFF; gap: 4px; }
+    .footer-col a:hover::before { width: 8px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 0;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-bottom p { font-size: 0.8125rem; color: #475569; }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { font-size: 0.8125rem; color: #475569; transition: color 0.2s ease; }
+    .footer-bottom-links a:hover { color: #FFFFFF; }
+
+    /* ============================================================
+       MOBILE STICKY CTA
+    ============================================================ */
+    .mobile-sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 900;
+      background: rgba(255,255,255,0.97); padding: 12px 16px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.12); border-top: 1px solid #E2E8F0;
+      backdrop-filter: blur(8px); transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .mobile-sticky-cta.visible { transform: translateY(0); }
+    .mobile-sticky-cta .btn-primary { width: 100%; justify-content: center; padding: 14px 24px; font-size: 0.9375rem; }
+
+    /* ============================================================
+       SCROLL PROGRESS BAR
+    ============================================================ */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+      background: linear-gradient(90deg, #D97706, #F59E0B);
+      width: 0%; transition: width 0.1s linear;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1023px) {
+      .hero h1 { font-size: 2.75rem; }
+      .section-header h2 { font-size: 2rem; }
+      .steps-grid { grid-template-columns: repeat(2,1fr); }
+      .steps-grid::before { display: none; }
+      .step-connector { display: none; }
+      .why-grid { grid-template-columns: repeat(2,1fr); }
+      .example-metrics { grid-template-columns: 1fr; }
+      .cross-sell-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2,1fr); }
+      .definition-grid { grid-template-columns: 1fr; gap: 28px; }
+      .pricing-whitelabel { flex-direction: column; text-align: center; }
+      .pricing-whitelabel-wrapper { padding: 28px 24px; }
+    }
+    @media (max-width: 767px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 120px 0 72px; min-height: auto; }
+      .hero h1 { font-size: 2rem; }
+      .hero-sub { font-size: 1.0625rem; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas .btn-primary, .hero-ctas .btn-secondary { justify-content: center; }
+      .section-header h2 { font-size: 1.75rem; }
+      .steps-grid { grid-template-columns: 1fr; gap: 20px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .pricing-card.popular { transform: none; }
+      .pricing-card.popular:hover { transform: translateY(-8px); }
+      .case-study-metrics { grid-template-columns: 1fr; gap: 12px; }
+      .case-study-card { padding: 28px; }
+      .example-card { padding: 28px; }
+      .final-cta h2 { font-size: 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .mobile-sticky-cta { display: block; }
+      body.mobile-cta-visible { padding-bottom: 72px; }
+      .definition-grid { grid-template-columns: 1fr; }
+      .pricing-whitelabel { flex-direction: column; text-align: center; }
+      .pricing-whitelabel-wrapper { padding: 28px 24px; }
+      .whitelabel h2 { font-size: 1.75rem; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.75rem; }
+      .final-cta h2 { font-size: 1.75rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      .reveal, .stagger-children > * { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Targeted Keywords for SEO -->
+  <noscript>
+    guest post services, buy guest posts, guest posting service, guest post backlinks, guest blogging services, guest posting agency, guest blog posting service, guest posting packages, guest post outreach service, buy guest post backlinks, guest post placements, affordable guest posts, high DA guest posts, white label guest posting, guest post for SEO, quality guest post services, SEO guest posting, guest post link building, guest blogging outreach
+  </noscript>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="nav" id="nav" role="banner">
+    <div class="container nav-inner">
+      <a href="Claude%20version.html" class="nav-logo" aria-label="BacklinksServices home">
+        <span class="nav-logo-mark" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 38 38" fill="none">
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#F59E0B"/>
+                <stop offset="100%" stop-color="#D97706"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="34" height="34" rx="10" fill="url(#logoGrad)"/>
+            <g transform="translate(7,7)" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </g>
+          </svg>
+        </span>
+        <span class="nav-logo-text">Backlinks<span class="dot">.</span>Services</span>
+      </a>
+      <div class="nav-links" role="navigation" aria-label="Main navigation">
+        <div class="nav-dropdown" id="servicesDropdown">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="guest-post-services.html" role="menuitem">Guest Posts</a>
+            <a href="niche-edits.html" role="menuitem">Niche Edits</a>
+            <a href="brand-mentions.html" role="menuitem">Brand Mentions</a>
+          </div>
+        </div>
+        <a href="white-label-link-building.html">For Agencies</a>
+        <a href="Claude%20version.html#why-us">About</a>
+        <a href="#final-cta">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#final-cta" class="btn-primary cta-track" data-cta="nav-get-started">Get Started</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+    <nav>
+      <button class="mobile-dropdown-trigger" id="mobileServicesTrigger" aria-expanded="false">
+        Services
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-sub-menu" id="mobileSubMenu">
+        <a href="guest-post-services.html">Guest Posts</a>
+        <a href="niche-edits.html">Niche Edits</a>
+        <a href="brand-mentions.html">Brand Mentions</a>
+      </div>
+      <a href="white-label-link-building.html">For Agencies</a>
+      <a href="Claude%20version.html#why-us">About</a>
+      <a href="#final-cta">Contact</a>
+      <a href="#final-cta" class="btn-primary cta-track" data-cta="mobile-get-started">Get Started</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <h1>Guest Post Services That Actually <span class="highlight">Get Published</span></h1>
+        <p class="hero-sub">We write 700+ word articles and place them on real, vetted websites in your niche with dofollow backlinks. From $70/link.</p>
+        <div class="hero-ctas">
+          <a href="#pricing" class="btn-primary cta-track" data-cta="hero-order">Order Guest Posts</a>
+          <a href="#final-cta" class="btn-secondary cta-track" data-cta="hero-quote">Get a Custom Quote</a>
+        </div>
+        <div class="hero-trust">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1.5L11.3175 6.195L16.5 6.9525L12.75 10.605L13.635 15.765L9 13.3275L4.365 15.765L5.25 10.605L1.5 6.9525L6.6825 6.195L9 1.5Z" fill="#D97706"/></svg>
+          <span>Your investment is fully refunded if we can't secure a placement on quality sites.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="pricing section-white" id="pricing">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge"><span class="badge-dot"></span>Pricing</div>
+          <h2>Guest Posting Packages</h2>
+        </div>
+        <div class="pricing-grid stagger-children reveal">
+          <!-- Starter -->
+          <div class="pricing-card">
+            <div class="pricing-card-tier">Starter</div>
+            <div class="pricing-card-name">DR 10–30</div>
+            <div class="pricing-card-dr">Foundational links</div>
+            <div class="pricing-card-price">$70<span>/link</span></div>
+            <div class="pricing-card-per">per placement</div>
+            <div class="pricing-card-divider"></div>
+            <ul class="pricing-card-features">
+              <li class="pricing-feature-highlight"><strong>200+ organic traffic</strong></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>700+ word article</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Anchor + URL control</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dofollow contextual link</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>TAT: 2 weeks</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free replacement if removed</li>
+            </ul>
+            <a href="#final-cta" class="btn-primary cta-track" data-cta="pricing-starter">Order Starter</a>
+          </div>
+
+          <!-- Growth (Most Popular) -->
+          <div class="pricing-card popular">
+            <div class="pricing-card-badge">Most Popular</div>
+            <div class="pricing-card-tier">Growth</div>
+            <div class="pricing-card-name">DR 31–40</div>
+            <div class="pricing-card-dr">Competitive niches</div>
+            <div class="pricing-card-price">$95<span>/link</span></div>
+            <div class="pricing-card-per">per placement</div>
+            <div class="pricing-card-divider"></div>
+            <ul class="pricing-card-features">
+              <li class="pricing-feature-highlight"><strong>500+ organic traffic</strong></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>700+ word article</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Anchor + URL control</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dofollow contextual link</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>TAT: 2 weeks</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free replacement if removed</li>
+            </ul>
+            <a href="#final-cta" class="btn-primary cta-track" data-cta="pricing-growth">Order Growth</a>
+          </div>
+
+          <!-- Authority -->
+          <div class="pricing-card">
+            <div class="pricing-card-tier">Authority</div>
+            <div class="pricing-card-name">DR 40+</div>
+            <div class="pricing-card-dr">Premium placements</div>
+            <div class="pricing-card-price">$135<span>/link</span></div>
+            <div class="pricing-card-per">per placement</div>
+            <div class="pricing-card-divider"></div>
+            <ul class="pricing-card-features">
+              <li class="pricing-feature-highlight"><strong>1,000+ organic traffic</strong></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>700+ word article</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Anchor + URL control</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dofollow contextual link</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>TAT: 2 weeks</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free replacement if removed</li>
+            </ul>
+            <a href="#final-cta" class="btn-primary cta-track" data-cta="pricing-authority">Order Authority</a>
+          </div>
+        </div>
+        <div class="pricing-includes">
+          <div class="pricing-includes-label">All tiers include:</div>
+          <div class="pricing-includes-pills">
+            <span class="pricing-includes-pill"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.5 3.5L5.5 9.5L2.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>700+ word article</span>
+            <span class="pricing-includes-pill"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.5 3.5L5.5 9.5L2.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Anchor + URL control</span>
+            <span class="pricing-includes-pill"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.5 3.5L5.5 9.5L2.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dofollow contextual link</span>
+            <span class="pricing-includes-pill"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.5 3.5L5.5 9.5L2.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>TAT: 2 weeks</span>
+            <span class="pricing-includes-pill"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.5 3.5L5.5 9.5L2.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Free replacement if removed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="how-it-works section-light" id="how-it-works">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge"><span class="badge-dot"></span>The Process</div>
+          <h2>How Our Guest Posting Service Works</h2>
+        </div>
+        <div class="steps-grid" id="stepsGrid">
+          <div class="step reveal" data-step="1">
+            <div class="step-circle"><span class="step-number">01</span></div>
+            <h3>You Tell Us Your Niche</h3>
+            <p>Send us your website, target page, and anchor texts. That's all we need to start.</p>
+            <div class="step-connector" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L14 7M19 12L14 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="step reveal" data-step="2">
+            <div class="step-circle"><span class="step-number">02</span></div>
+            <h3>We Find &amp; Vet Sites</h3>
+            <p>Our guest post outreach service manually reviews every potential site for traffic, quality, and editorial standards.</p>
+            <div class="step-connector" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L14 7M19 12L14 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="step reveal" data-step="3">
+            <div class="step-circle"><span class="step-number">03</span></div>
+            <h3>We Write the Article</h3>
+            <p>Skilled writers create 700+ words of content that fits the host site's style. Every article is crafted to read naturally in its context.</p>
+            <div class="step-connector" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L14 7M19 12L14 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="step reveal" data-step="4">
+            <div class="step-circle"><span class="step-number">04</span></div>
+            <h3>You Get the Report</h3>
+            <p>Live URL, domain metrics, anchor text, and article snapshot — everything you need to track results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY DIFFERENT ========== -->
+    <section class="why-different section-white" id="why-different">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge"><span class="badge-dot"></span>Why Us</div>
+          <h2>Why Our Quality Guest Post Services Stand Out</h2>
+        </div>
+        <div class="why-grid stagger-children reveal">
+          <article class="why-card">
+            <div class="why-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 36 36" fill="none"><path d="M18 3L21.09 9.26L28 10.27L23 15.14L24.18 22.02L18 18.77L11.82 22.02L13 15.14L8 10.27L14.91 9.26L18 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Published or Refunded</h3>
+            <p>We charge upfront to secure quality placements, not empty promises. If we can't get your guest post published on vetted sites, you get a full refund — no questions asked.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 36 36" fill="none"><path d="M18 3L6 9V18C6 25 11.5 31.2 18 33C24.5 31.2 30 25 30 18V9L18 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13 18L16 21L23 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Real Sites, Not Link Farms</h3>
+            <p>Every site passes manual review. We reject more than we accept. No PBNs, no blogrolls — just real sites with real traffic and real audiences.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 36 36" fill="none"><path d="M18 3L21.09 9.26L28 10.27L23 15.14L24.18 22.02L18 18.77L11.82 22.02L13 15.14L8 10.27L14.91 9.26L18 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Content That Doesn't Scream "Guest Post"</h3>
+            <p>Our writers match the host site's tone and style. Articles read like they belong there — because they do. No over-optimization, no keyword stuffing.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="2"/><path d="M18 10V18L23 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>We Only Place on Quality Sites</h3>
+            <p>Every site is manually vetted for real traffic, editorial standards, and niche relevance. We reject more sites than we accept — so your link only appears on publications worth linking from.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXAMPLE ========== -->
+    <section class="example section-light" id="example">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge"><span class="badge-dot"></span>Real Placement</div>
+          <h2>What a Guest Post Services Placement Looks Like</h2>
+        </div>
+        <article class="example-card reveal scale-in">
+          <div class="example-label">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1L8.5 4.5L12.5 5L9.5 7.8L10.5 12L7 10L3.5 12L4.5 7.8L1.5 5L5.5 4.5L7 1Z" fill="#D97706"/></svg>
+            Marketing Automation SaaS
+          </div>
+          <h3>7 Email Segmentation Strategies That Increase Open Rates</h3>
+          <p>A marketing automation SaaS wanted to rank for "email segmentation strategies." We placed a 950-word article on a DR 42 marketing blog that gets 18,000 monthly visitors. The article naturally linked to the client's guide using the anchor text "advanced segmentation techniques." The link appears in the third paragraph, contextually relevant to a point about behavioral triggers. The host site promoted the article in their newsletter, driving 230 referral visits in the first week.</p>
+          <div class="example-metrics">
+            <div class="example-metric">
+              <div class="example-metric-value">DR 42</div>
+              <div class="example-metric-label">Domain Rating</div>
+            </div>
+            <div class="example-metric">
+              <div class="example-metric-value">18K</div>
+              <div class="example-metric-label">Monthly Traffic</div>
+            </div>
+            <div class="example-metric">
+              <div class="example-metric-value">230</div>
+              <div class="example-metric-label">Referral Visits (Week 1)</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== WHITE-LABEL ========== -->
+    <section class="whitelabel section-dark" id="whitelabel">
+      <div class="container whitelabel-inner">
+        <div class="reveal">
+          <h2>White-Label Guest Posting for SEO Agencies</h2>
+          <div class="whitelabel-divider" aria-hidden="true"></div>
+          <p class="whitelabel-text-segment">You sell. We write, outreach, and place. Your client sees your brand, your report, your results.</p>
+          <p class="whitelabel-text-segment">At $50/link in bundles of 10+, you can offer affordable guest posts while maintaining healthy margins.</p>
+          <p class="whitelabel-text-segment">We handle the entire guest blog posting service from prospecting to publication — you get the credit and the recurring revenue.</p>
+          <a href="white-label-link-building.html" class="btn-primary cta-track" data-cta="whitelabel-learn">Learn About Our Agency Program →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CASE STUDY ========== -->
+    <section class="case-study-section section-light" id="case-study">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge"><span class="badge-dot"></span>Results</div>
+          <h2>Real Results from Guest Post Backlinks</h2>
+        </div>
+        <article class="case-study-card reveal scale-in">
+          <div class="case-study-label">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1L8.5 4.5L12.5 5L9.5 7.8L10.5 12L7 10L3.5 12L4.5 7.8L1.5 5L5.5 4.5L7 1Z" fill="#D97706"/></svg>
+            B2B SaaS · $840 total investment · 6 months
+          </div>
+          <h3>From Page 4 to Page 1 in Six Months</h3>
+          <p>A B2B SaaS client came to us with DA 18 and ranking on page 4 for their primary keyword. Over six months, we placed 12 guest posts on niche-relevant sites (average DR 38) targeting supporting keywords and their money page. Their Domain Authority increased to 31, organic traffic grew 180%, and their target keyword moved to position 7 on page 1. Total investment: $840. The referral traffic from those guest post placements now converts at 4.2% — higher than their paid search campaigns.</p>
+          <div class="case-study-metrics">
+            <div class="case-metric">
+              <div class="case-metric-value"><span class="count-up" data-target="180" data-suffix="% ↑">180% ↑</span></div>
+              <div class="case-metric-label">Organic Traffic Growth</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">DA 18 → 31</div>
+              <div class="case-metric-label">Domain Authority</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== CROSS-SELL ========== -->
+    <section class="cross-sell section-white" id="cross-sell">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge"><span class="badge-dot"></span>Complete Your Strategy</div>
+          <h2>Pair Guest Posts With These Services</h2>
+        </div>
+        <div class="cross-sell-grid stagger-children reveal">
+          <a href="niche-edits.html" class="cross-sell-card">
+            <h3>Niche Edits</h3>
+            <p>Need faster results? Get your link placed inside existing articles that already rank on Google. No new content needed.</p>
+            <span class="btn-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a href="brand-mentions.html" class="cross-sell-card">
+            <h3>Brand Mentions</h3>
+            <p>Building brand authority? Get your brand cited on real publications for SEO authority signals and AI search visibility.</p>
+            <span class="btn-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq section-white" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge"><span class="badge-dot"></span>Got Questions?</div>
+          <h2>Frequently Asked Questions About Guest Post Placements</h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item open">
+            <button class="faq-question" aria-expanded="true">
+              What Is a Guest Post?
+              <span class="faq-toggle" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">A guest post is a new article written and published on a relevant website in your niche, with a natural, in-content link back to your site. Unlike PBNs or link farms, guest posts connect you with real websites that have editorial standards, organic traffic, and audiences in your industry. When done right, guest post backlinks build topical authority and send qualified referral traffic — which is why Google recommends them as a legitimate SEO method.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How much do guest post services cost?
+              <span class="faq-toggle" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Guest post services typically range from $70 to $135 per placement depending on the domain authority (DR 10-40+) and organic traffic of the publishing site, with white-label bundles available from $50/link for agencies.</div>
+            </div>
+          </div>
+          <div class="faq-item open">
+            <button class="faq-question" aria-expanded="true">
+              What niches can you get guest posts in?
+              <span class="faq-toggle" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We work in most B2B and B2C niches including marketing, SaaS, finance, health, home services, and ecommerce. During consultation, we'll confirm if we have vetted sites in your specific industry. Our guest post placements are only placed on sites editorially relevant to your niche to maximize topical authority.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How long until my guest post goes live?
+              <span class="faq-toggle" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Most guest post placements go live within 14-21 days from order. This includes outreach, article writing, revisions, and publication. Rush service available for time-sensitive campaigns. We'll always give you a clear timeline upfront.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What happens if the site removes my link?
+              <span class="faq-toggle" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We monitor all placements for 12 months. If a link is removed or changed to nofollow without cause, we replace it at no charge on a site of equal or higher Domain Authority. Your investment stays protected.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do I get to review the article before it's published?
+              <span class="faq-toggle" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Pre-publication review is available as an optional upgrade for an additional fee. Our standard process handles content creation and placement based on your target page and anchor text preferences — our writers match the host site's tone and style so the article reads naturally. If you need to review and approve every article before it goes live, we can accommodate that with custom pricing.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can you match my brand's tone and style?
+              <span class="faq-toggle" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes — this is available as an optional upgrade. Send us writing samples or brand guidelines and our writers will match your voice. We can also write in the host site's style to ensure the article feels native. This service is available at an additional charge for custom brand alignment.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What's the difference between a guest post and a niche edit?
+              <span class="faq-toggle" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">A guest post is a new article we create and publish on a site with a fresh contextual backlink. A niche edit inserts your link into an existing, already-indexed article on an established page. Both work — guest posts give you more control over anchor text and surrounding content, while niche edits deliver faster results from pages Google already trusts.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FINAL CTA ========== -->
+    <section class="final-cta section-dark" id="final-cta">
+      <div class="container final-cta-content reveal">
+        <h2>Ready to Buy Guest Posts That Actually Work?</h2>
+        <p>We charge upfront to secure real placements on vetted sites. If we can't deliver, you get a full refund — no questions asked.</p>
+        <a href="#" class="btn-primary cta-track" data-cta="final-order">Order Guest Posts Now</a>
+        <div class="final-cta-or">Questions about bulk pricing or white-label services? <a href="#">Get a custom quote →</a></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="Claude%20version.html">Home</a>
+          <a href="Claude%20version.html#why-us">About Us</a>
+          <a href="Claude%20version.html#how-it-works">How It Works</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="guest-post-services.html">Guest Posts</a>
+          <a href="niche-edits.html">Niche Edits</a>
+          <a href="brand-mentions.html">Brand Mentions</a>
+          <a href="white-label-link-building.html">White Label Link Building</a>
+        </div>
+        <div class="footer-col">
+          <h4>For Agencies</h4>
+          <a href="white-label-link-building.html">White Label Program</a>
+          <a href="white-label-link-building.html">Agency Pricing</a>
+          <a href="#">Reseller Dashboard</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@backlinksservices.com">hello@backlinksservices.com</a>
+          <a href="#">Support Center</a>
+          <a href="#final-cta">Get a Free Link Plan</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 BacklinksServices. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky CTA -->
+  <div class="mobile-sticky-cta" id="mobileStickyCta">
+    <a href="#final-cta" class="btn-primary cta-track" data-cta="mobile-sticky">Order Guest Posts — From $70/Link</a>
+  </div>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+  (function () {
+    'use strict';
+
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ─── Scroll Progress Bar ────────────────────────────────────
+    var progressBar = document.getElementById('scrollProgress');
+    function updateProgress() {
+      var scrollTop  = window.pageYOffset || document.documentElement.scrollTop;
+      var docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
+    // ─── Sticky Nav ────────────────────────────────────────────
+    var nav = document.getElementById('nav');
+    function handleNavScroll() {
+      if (window.pageYOffset > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', handleNavScroll, { passive: true });
+    handleNavScroll();
+
+    // ─── Ripple effect on all .btn-primary ─────────────────────
+    document.querySelectorAll('.btn-primary').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        var rect   = btn.getBoundingClientRect();
+        var size   = Math.max(rect.width, rect.height) * 2;
+        var x      = e.clientX - rect.left - size / 2;
+        var y      = e.clientY - rect.top  - size / 2;
+        var ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        ripple.style.cssText = 'width:' + size + 'px;height:' + size + 'px;left:' + x + 'px;top:' + y + 'px;';
+        btn.appendChild(ripple);
+        ripple.addEventListener('animationend', function () { ripple.remove(); });
+      });
+    });
+
+    // ─── Scroll Reveal (IntersectionObserver) ──────────────────
+    if ('IntersectionObserver' in window && !prefersReduced) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        revealObserver.observe(el);
+      });
+    } else {
+      document.querySelectorAll('.reveal, .stagger-children > *').forEach(function (el) {
+        el.style.opacity = '1'; el.style.transform = 'none';
+      });
+    }
+
+    // ─── Count-Up numbers ──────────────────────────────────────
+    function animateCount(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1800;
+      var start = performance.now();
+      function step(now) {
+        var elapsed = now - start;
+        var progress = Math.min(elapsed / duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3);
+        var current = Math.floor(ease * target);
+        el.textContent = current.toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target.toLocaleString() + suffix;
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window && !prefersReduced) {
+      var countObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            countObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('.count-up').forEach(function (el) {
+        countObserver.observe(el);
+      });
+    }
+
+    // ─── Steps — activate on scroll ────────────────────────────
+    if (!prefersReduced) {
+      var steps = document.querySelectorAll('.step[data-step]');
+      var stepObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var stepNum = parseInt(entry.target.getAttribute('data-step'), 10);
+            setTimeout(function () {
+              entry.target.classList.add('active');
+            }, (stepNum - 1) * 180);
+          }
+        });
+      }, { threshold: 0.4 });
+      steps.forEach(function (s) { stepObserver.observe(s); });
+    }
+
+    // ─── FAQ Accordion ─────────────────────────────────────────
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+      item.querySelector('.faq-question').addEventListener('click', function () {
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function (o) {
+          o.classList.remove('open');
+          o.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ─── Smooth Scroll ─────────────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        var id = this.getAttribute('href');
+        if (id === '#') return;
+        var target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          var offset = nav.offsetHeight + 16;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ─── Mobile Menu ───────────────────────────────────────────
+    var hamburger  = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+    var overlay    = document.getElementById('mobileOverlay');
+    var msTrigger  = document.getElementById('mobileServicesTrigger');
+    var msMenu     = document.getElementById('mobileSubMenu');
+
+    function openMenu() {
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', function () {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeMenu); });
+    msTrigger.addEventListener('click', function () {
+      var exp = msTrigger.getAttribute('aria-expanded') === 'true';
+      msTrigger.setAttribute('aria-expanded', !exp);
+      msMenu.classList.toggle('open');
+    });
+
+    // ─── Desktop Nav Dropdown ──────────────────────────────────
+    var dropdown = document.getElementById('servicesDropdown');
+    var trigger  = dropdown.querySelector('.nav-dropdown-trigger');
+    var dropTimer = null;
+    function openDrop(){ clearTimeout(dropTimer); dropdown.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+    function closeDrop(){ dropTimer = setTimeout(function(){ dropdown.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); }, 120); }
+    dropdown.addEventListener('mouseenter', openDrop);
+    dropdown.addEventListener('mouseleave', closeDrop);
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = dropdown.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // ─── Mobile Sticky CTA ─────────────────────────────────────
+    var stickyCta = document.getElementById('mobileStickyCta');
+    var heroEl    = document.getElementById('hero');
+    function checkSticky() {
+      if (window.innerWidth > 767) {
+        stickyCta.classList.remove('visible');
+        document.body.classList.remove('mobile-cta-visible');
+        return;
+      }
+      var heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
+      if (window.pageYOffset > heroBottom) {
+        stickyCta.classList.add('visible');
+        document.body.classList.add('mobile-cta-visible');
+      } else {
+        stickyCta.classList.remove('visible');
+        document.body.classList.remove('mobile-cta-visible');
+      }
+    }
+    window.addEventListener('scroll', checkSticky, { passive: true });
+    window.addEventListener('resize', checkSticky, { passive: true });
+    checkSticky();
+
+    // ─── CTA Tracking ──────────────────────────────────────────
+    document.querySelectorAll('.cta-track').forEach(function (el) {
+      el.addEventListener('click', function () {
+        console.log('[CTA Click]', this.getAttribute('data-cta'), new Date().toISOString());
+      });
+    });
+
+    // ─── Keyboard Escape ───────────────────────────────────────
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeMenu();
+        dropdown.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+  })();
+  </script>
+</body>
+</html>
