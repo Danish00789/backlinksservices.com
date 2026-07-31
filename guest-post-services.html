@@ -274,7 +274,7 @@
 
     .hero h1 {
       font-size: 3.5rem; font-weight: 800; line-height: 1.1; color: #FFFFFF;
-      letter-spacing: -0.03em; margin-bottom: 24px;
+      letter-spacing: -0.03em; margin-bottom: 24px; overflow-wrap: break-word; word-break: break-word;
       opacity: 0; animation: hero-enter 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s forwards;
     }
     .hero h1 .highlight {
@@ -288,7 +288,7 @@
     @keyframes underline-draw { to { width: 100%; } }
 
     .hero-sub {
-      font-size: 1.1875rem; color: #94A3B8; line-height: 1.7;
+      font-size: 1.1875rem; color: #94A3B8; line-height: 1.7; overflow-wrap: break-word;
       max-width: 640px; margin: 0 auto 40px;
       opacity: 0; animation: hero-enter 0.9s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
     }
@@ -304,6 +304,11 @@
       white-space: nowrap;
     }
     @media (max-width: 767px) {
+      .hero-trust span { white-space: normal; }
+      .hero-trust { flex-wrap: wrap; text-align: center; gap: 6px; }
+      .services-note { white-space: normal; font-size: 0.9375rem; padding: 16px 20px; }
+      .final-cta p { white-space: normal; }
+      .pricing-card { padding: 28px 24px; }
       .hero-trust { white-space: normal; text-align: center; }
     }
     .hero-trust svg { flex-shrink: 0; animation: star-spin 2s ease 1.5s both; }
@@ -857,7 +862,7 @@
        RESPONSIVE
     ============================================================ */
     @media (max-width: 1023px) {
-      .hero h1 { font-size: 2.75rem; }
+      .hero h1 { font-size: 2.5rem; }
       .section-header h2 { font-size: 2rem; }
       .steps-grid { grid-template-columns: repeat(2,1fr); }
       .steps-grid::before { display: none; }
@@ -871,6 +876,11 @@
       .pricing-whitelabel-wrapper { padding: 28px 24px; }
     }
     @media (max-width: 767px) {
+      .hero-trust span { white-space: normal; }
+      .hero-trust { flex-wrap: wrap; text-align: center; gap: 6px; }
+      .services-note { white-space: normal; font-size: 0.9375rem; padding: 16px 20px; }
+      .final-cta p { white-space: normal; }
+      .pricing-card { padding: 28px 24px; }
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
       .hero { padding: 120px 0 72px; min-height: auto; }
@@ -898,8 +908,22 @@
       .whitelabel h2 { font-size: 1.75rem; }
     }
     @media (max-width: 480px) {
-      .hero h1 { font-size: 1.75rem; }
-      .final-cta h2 { font-size: 1.75rem; }
+      .hero h1 { font-size: 1.5rem; }
+      .hero-sub { font-size: 0.9375rem; }
+      .section-header h2 { font-size: 1.5rem; }
+      .final-cta h2 { font-size: 1.5rem; }
+      .pricing-card { padding: 24px 20px; }
+      .pricing-card-name { font-size: 1.25rem; }
+      .pricing-card-price { font-size: 2.25rem; }
+      .trust-metric-number { font-size: 1.5rem; }
+      .case-metric-value { font-size: 1.5rem; }
+      .btn-primary, .btn-secondary { font-size: 0.875rem; padding: 12px 24px; }
+      .hero-trust span { white-space: normal; }
+      .hero-trust { flex-wrap: wrap; text-align: center; }
+      .services-note { white-space: normal; font-size: 0.9375rem; padding: 16px 20px; }
+      .final-cta p { white-space: normal; font-size: 0.9375rem; }
+      .footer-col a { font-size: 0.875rem; }
+      .section-badge { font-size: 0.75rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }

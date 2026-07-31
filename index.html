@@ -282,11 +282,11 @@
     /* Hero enter animations */
     .hero h1 {
       font-size: 3.5rem; font-weight: 800; line-height: 1.1; color: #FFFFFF;
-      letter-spacing: -0.03em; margin-bottom: 24px;
+      letter-spacing: -0.03em; margin-bottom: 24px; overflow-wrap: break-word; word-break: break-word;
       opacity: 0; animation: hero-enter 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s forwards;
     }
     .hero-sub {
-      font-size: 1.1875rem; color: #94A3B8; line-height: 1.7;
+      font-size: 1.1875rem; color: #94A3B8; line-height: 1.7; overflow-wrap: break-word;
       max-width: 640px; margin: 0 auto 40px;
       opacity: 0; animation: hero-enter 0.9s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
     }
@@ -807,6 +807,10 @@
       .why-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 767px) {
+      .hero-trust span { white-space: normal; }
+      .hero-trust { flex-wrap: wrap; text-align: center; gap: 6px; }
+      .services-note { white-space: normal; font-size: 0.9375rem; padding: 16px 20px; }
+      .final-cta p { white-space: normal; }
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
       .hero { padding: 120px 0 72px; min-height: auto; }
@@ -836,10 +840,17 @@
       body.mobile-cta-visible { padding-bottom: 72px; }
     }
     @media (max-width: 480px) {
-      .hero h1 { font-size: 1.75rem; }
-      .trust-metric-number { font-size: 1.75rem; }
+      .hero h1 { font-size: 1.5rem; }
+      .hero-sub { font-size: 0.9375rem; }
+      .section-header h2 { font-size: 1.5rem; }
+      .final-cta h2 { font-size: 1.5rem; }
+      .trust-metric-number { font-size: 1.5rem; }
       .industries-grid { grid-template-columns: 1fr; }
-      .final-cta h2 { font-size: 1.75rem; }
+      .btn-primary, .btn-secondary { font-size: 0.875rem; padding: 12px 24px; }
+      .hero-trust span { white-space: normal; }
+      .hero-trust { flex-wrap: wrap; text-align: center; }
+      .services-note { white-space: normal; font-size: 0.9375rem; padding: 16px 20px; }
+      .final-cta p { white-space: normal; font-size: 0.9375rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
