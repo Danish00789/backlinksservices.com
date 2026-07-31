@@ -346,7 +346,7 @@
     ============================================================ */
     .v2-reasons { padding: 80px 0; background: #F8FAFC; }
     .v2-reasons-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
     }
     .v2-reason-card {
       background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 36px 28px;
@@ -382,7 +382,7 @@
     ============================================================ */
     .v2-placements { padding: 80px 0; background: #FFFFFF; }
     .v2-placements-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
     }
     .v2-placement-card {
       background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px 24px;
@@ -440,7 +440,7 @@
       font-size: 1.0625rem; color: #94A3B8; line-height: 1.8;
     }
     .v2-llm-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;
       margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;
     }
     .v2-llm-item {
@@ -514,7 +514,7 @@
        HOW IT WORKS (unchanged)
     ============================================================ */
     .how-it-works { padding: 80px 0; background: #F8FAFC; }
-    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; position: relative; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 32px; position: relative; }
     .steps-grid::before {
       content: ''; position: absolute; top: 22px; left: 12.5%; right: 12.5%; height: 2px;
       background: linear-gradient(90deg, #D97706 var(--progress, 0%), #E2E8F0 var(--progress, 0%));
@@ -571,7 +571,7 @@
     ============================================================ */
     .pricing { padding: 80px 0; background: #FFFFFF; }
     .pricing-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
       max-width: 1000px; margin: 0 auto;
     }
     .pricing-card {
@@ -650,7 +650,7 @@
        CROSS-SELL (unchanged)
     ============================================================ */
     .cross-sell { padding: 80px 0; background: #F8FAFC; }
-    .cross-sell-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .cross-sell-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 24px; }
     .cross-sell-card {
       background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px;
       padding: 36px 32px; position: relative; display: flex; flex-direction: column;
@@ -722,7 +722,7 @@
        FOOTER (unchanged)
     ============================================================ */
     .footer { background: #0F172A; padding: 64px 0 0; border-top: 2px solid #D97706; }
-    .footer-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; padding-bottom: 48px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 40px; padding-bottom: 48px; }
     .footer-col h4 {
       font-size: 0.875rem; font-weight: 600; color: #FFFFFF;
       text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;

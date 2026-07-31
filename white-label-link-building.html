@@ -495,7 +495,7 @@
        HOW IT WORKS
     ============================================================ */
     .how-it-works { padding: 80px 0; background: #F8FAFC; }
-    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; position: relative; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 32px; position: relative; }
     .steps-grid::before {
       content: ''; position: absolute; top: 22px; left: 12.5%; right: 12.5%; height: 2px;
       background: linear-gradient(90deg, #D97706 var(--progress, 0%), #E2E8F0 var(--progress, 0%));
@@ -525,7 +525,7 @@
        WHY DIFFERENT (kept for reference, v2 cards used instead)
     ============================================================ */
     .why-different { padding: 80px 0; background: #FFFFFF; }
-    .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 24px; }
     .why-card {
       padding: 32px 32px 32px 28px;
       border-left: 3px solid #D97706; background: #FFFFFF; border-radius: 0 14px 14px 0;
@@ -571,7 +571,7 @@
     .example-card h3 { font-size: 1.25rem; font-weight: 700; color: #0F172A; margin-bottom: 12px; }
     .example-card p { font-size: 1rem; color: #64748B; line-height: 1.7; }
     .example-metrics {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 24px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-top: 24px;
     }
     .example-metric {
       text-align: center; padding: 16px;
@@ -588,7 +588,7 @@
     ============================================================ */
     .pricing { padding: 80px 0; background: #FFFFFF; }
     .pricing-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
       max-width: 1000px; margin: 0 auto;
     }
     .pricing-card {
@@ -764,7 +764,7 @@
     }
     .case-study-card h3 { font-size: 1.375rem; font-weight: 700; color: #0F172A; margin-bottom: 14px; }
     .case-study-card p { font-size: 1rem; color: #64748B; line-height: 1.7; margin-bottom: 32px; }
-    .case-study-metrics { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .case-study-metrics { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 24px; }
     .case-metric {
       text-align: center; padding: 20px;
       background: #F8FAFC; border-radius: 12px; border: 1px solid #E2E8F0;
@@ -840,7 +840,7 @@
        CROSS-SELL
     ============================================================ */
     .cross-sell { padding: 80px 0; background: #F8FAFC; }
-    .cross-sell-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .cross-sell-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 24px; }
     .cross-sell-card {
       background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px;
       padding: 36px 32px; position: relative; display: flex; flex-direction: column;
@@ -858,7 +858,7 @@
        FOOTER
     ============================================================ */
     .footer { background: #0F172A; padding: 64px 0 0; border-top: 2px solid #D97706; }
-    .footer-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; padding-bottom: 48px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 40px; padding-bottom: 48px; }
     .footer-col h4 {
       font-size: 0.875rem; font-weight: 600; color: #FFFFFF;
       text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;
@@ -1085,7 +1085,7 @@
           <h2>You're Leaving Money on the Table</h2>
         </div>
         <div class="definition-content reveal">
-          <div class="problem-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;text-align:left;">
+          <div class="problem-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;text-align:left;">
             <div class="v2-card">
               <div class="v2-card-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
@@ -1163,7 +1163,7 @@
           <div class="section-badge"><span class="badge-dot"></span>What You Get</div>
           <h2>What's Included in Every Agency Partnership</h2>
         </div>
-        <div class="stagger-children reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div class="stagger-children reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;">
           <article class="v2-card">
             <div class="v2-card-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2Zm10-10V7a4 4 0 0 0-8 0v4h8Z"/></svg>
@@ -1445,7 +1445,7 @@
       <div class="container whitelabel-inner">
         <div class="reveal">
           <h2>The Four Promises Every Link Building Partner for Agencies Should Make</h2>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px;text-align:left;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:24px;margin-top:32px;text-align:left;">
             <div class="v2-card-dark">
               <h3>We never contact your clients. Ever.</h3>
               <p>All communication goes through you. We don't pitch, email, or call anyone you introduce us to. Your relationship is sacred.</p>
