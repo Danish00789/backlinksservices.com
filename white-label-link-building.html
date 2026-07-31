@@ -946,6 +946,10 @@
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
       .mobile-sticky-cta { display: block; }
       body.mobile-cta-visible { padding-bottom: 72px; }
+      /* Override inline grid styles on mobile */
+      [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
     }
     @media (max-width: 480px) {
       .hero h1 { font-size: 1.5rem; }
@@ -1078,10 +1082,10 @@
       <div class="container">
         <div class="section-header reveal">
           <div class="section-badge"><span class="badge-dot"></span>The Problem</div>
-          <h2 style="white-space:nowrap;">You're Leaving Money on the Table</h2>
+          <h2>You're Leaving Money on the Table</h2>
         </div>
         <div class="definition-content reveal">
-          <div class="problem-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;text-align:left;">
+          <div class="problem-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;text-align:left;">
             <div class="v2-card">
               <div class="v2-card-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
@@ -1243,7 +1247,7 @@
       <div class="container">
         <div class="section-header reveal">
           <div class="section-badge"><span class="badge-dot"></span>Pricing</div>
-          <h2 style="white-space:nowrap;">White Label Link Building Packages</h2>
+          <h2>White Label Link Building Packages</h2>
         </div>
 
         <!-- Tabs -->
