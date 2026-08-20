@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BacklinksServices — Backlinks Services That Actually Move Your Rankings</title>
+    <meta name="description" content="Real backlinks services from real editors at real websites. Guest posts, niche edits, and brand mentions. 12,000+ links placed since 2019.">
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1E293B;
+            background: #FFFFFF;
+            line-height: 1.7;
+            font-size: 1rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ========== TYPOGRAPHY ========== */
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ========== LAYOUT ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 48px 0;
+            }
+        }
+
+        /* ========== NAVIGATION ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-logo .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #D97706;
+            margin-left: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 0.938rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #FFFFFF;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-top: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-dropdown-menu-inner {
+            background: #1E293B;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 200px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .nav-dropdown-menu-inner a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 0.875rem;
+            color: #CBD5E1;
+            white-space: nowrap;
+        }
+
+        .nav-dropdown-menu-inner a:hover {
+            background: rgba(255,255,255,0.05);
+            color: #FFFFFF;
+        }
+
+        .nav-cta {
+            display: inline-block;
+            background: #D97706;
+            color: #FFFFFF;
+            padding: 10px 24px;
+            border-radius: 9999px;
+            font-size: 0.938rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: #B45309;
+            transform: translateY(-1px);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #FFFFFF;
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile menu overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: #0F172A;
+            z-index: 999;
+            padding: 100px 32px 32px;
+            transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .mobile-menu a:hover {
+            color: #FFFFFF;
+        }
+
+        .mobile-menu .dropdown-links {
+            padding-left: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-menu .dropdown-links a {
+            font-size: 0.938rem;
+            color: #94A3B8;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu {
+                display: flex;
+            }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            background: #0F172A;
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            max-width: 800px;
+            margin-bottom: 24px;
+        }
+
+        .hero .subhead {
+            color: #94A3B8;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.7;
+            max-width: 680px;
+            margin-bottom: 40px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: #D97706;
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background: #B45309;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #FFFFFF;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #94A3B8;
+            font-size: 0.938rem;
+        }
+
+        .hero-trust svg {
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 0 64px;
+            }
+            .hero-ctas {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* ========== TRUST BAR ========== */
+        .trust-bar {
+            background: #F8FAFC;
+        }
+
+        .trust-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .trust-card {
+            text-align: center;
+            padding: 32px 16px;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .trust-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+        }
+
+        .trust-card .icon {
+            color: #D97706;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .trust-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0F172A;
+            line-height: 1.2;
+        }
+
+        .trust-card .label {
+            color: #64748B;
+            font-size: 0.938rem;
+            margin-top: 4px;
+        }
+
+        .trust-testimonial {
+            text-align: center;
+            font-style: italic;
+            color: #475569;
+            font-size: 1.063rem;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 24px;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+        }
+
+        .trust-testimonial .author {
+            display: block;
+            margin-top: 8px;
+            font-style: normal;
+            font-weight: 600;
+            color: #0F172A;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .trust-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trust-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== PROBLEM + SOLUTION ========== */
+        .problem-solution {
+            background: #FFFFFF;
+        }
+
+        .ps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .ps-col {
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .ps-problem {
+            background: #FFF7ED;
+            border: 1px solid #FED7AA;
+        }
+
+        .ps-problem h3 {
+            color: #C2410C;
+            margin-bottom: 16px;
+        }
+
+        .ps-problem p {
+            color: #78350F;
+            font-size: 1.063rem;
+        }
+
+        .ps-solution {
+            background: #F0FDF4;
+            border: 1px solid #BBF7D0;
+        }
+
+        .ps-solution h3 {
+            color: #059669;
+            margin-bottom: 16px;
+        }
+
+        .ps-solution p {
+            color: #14532D;
+            font-size: 1.063rem;
+        }
+
+        @media (max-width: 768px) {
+            .ps-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* ========== SECTION HEADERS ========== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-header h2 {
+            color: #0F172A;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: #64748B;
+            font-size: 1.125rem;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* ========== SERVICES ========== */
+        .services {
+            background: #FFFFFF;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .service-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 40px 32px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+        }
+
+        .service-card .badge {
+            position: absolute;
+            top: -13px;
+            left: 32px;
+            background: #D97706;
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 14px;
+            border-radius: 9999px;
+        }
+
+        .service-card .icon {
+            color: #D97706;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: #0F172A;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #475569;
+            font-size: 0.938rem;
+            margin-bottom: 16px;
+        }
+
+        .service-card .price {
+            font-weight: 700;
+            color: #0F172A;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .service-card .learn-more {
+            color: #D97706;
+            font-weight: 600;
+            font-size: 0.938rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap 0.2s;
+        }
+
+        .service-card .learn-more:hover {
+            gap: 8px;
+        }
+
+        .services-note {
+            text-align: center;
+            color: #64748B;
+            font-size: 0.938rem;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== HOW IT WORKS ========== */
+        .how-it-works {
+            background: #F8FAFC;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: #E2E8F0;
+            z-index: 0;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 0 16px;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            border: 2px solid #D97706;
+            color: #D97706;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            color: #0F172A;
+            margin-bottom: 8px;
+            font-size: 1.125rem;
+        }
+
+        .step-card p {
+            color: #64748B;
+            font-size: 0.938rem;
+        }
+
+        @media (max-width: 768px) {
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            .steps::before {
+                display: none;
+            }
+        }
+
+        /* ========== WHY CHOOSE US ========== */
+        .why-us {
+            background: #FFFFFF;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .why-card {
+            background: #FFFFFF;
+            border-left: 4px solid #D97706;
+            padding: 32px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            border-top: 1px solid #E2E8F0;
+            border-right: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .why-card .icon {
+            color: #D97706;
+            margin-bottom: 12px;
+        }
+
+        .why-card h3 {
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            color: #475569;
+            font-size: 0.938rem;
+        }
+
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== AGENCIES ========== */
+        .agencies {
+            background: #0F172A;
+            text-align: center;
+        }
+
+        .agencies h2 {
+            color: #FFFFFF;
+            margin-bottom: 16px;
+        }
+
+        .agencies p {
+            color: #94A3B8;
+            font-size: 1.125rem;
+            max-width: 640px;
+            margin: 0 auto 32px;
+        }
+
+        .agencies .btn-outline {
+            color: #FFFFFF;
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .agencies .btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* ========== INDUSTRIES ========== */
+        .industries {
+            background: #FFFFFF;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .industries-grid .industry-card:last-child {
+            grid-column: 1 / -1;
+            max-width: 400px;
+            justify-self: center;
+        }
+
+        .industry-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 32px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            text-align: left;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+        }
+
+        .industry-card .icon {
+            color: #D97706;
+            margin-bottom: 16px;
+        }
+
+        .industry-card h3 {
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .industry-card p {
+            color: #475569;
+            font-size: 0.938rem;
+        }
+
+        @media (max-width: 768px) {
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            .industries-grid .industry-card:last-child {
+                grid-column: 1;
+                max-width: none;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1023px) {
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .industries-grid .industry-card:nth-child(7) {
+                grid-column: 1 / -1;
+                max-width: calc(50% - 12px);
+                justify-self: center;
+            }
+        }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonials {
+            background: #F8FAFC;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .testi-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 40px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .testi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+        }
+
+        .testi-card blockquote {
+            font-size: 1.063rem;
+            color: #334155;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testi-card .author {
+            font-weight: 600;
+            color: #0F172A;
+        }
+
+        .testi-card .role {
+            color: #64748B;
+            font-size: 0.875rem;
+        }
+
+        /* Case study */
+        .case-study {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 40px;
+            border-left: 4px solid #D97706;
+        }
+
+        .case-study h3 {
+            color: #0F172A;
+            margin-bottom: 16px;
+        }
+
+        .case-study p {
+            color: #334155;
+            font-size: 1.063rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== FAQ ========== */
+        .faq {
+            background: #FFFFFF;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 24px 0;
+            font-size: 1.063rem;
+            font-weight: 600;
+            color: #0F172A;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+            line-height: 1.5;
+        }
+
+        .faq-question:hover {
+            color: #D97706;
+        }
+
+        .faq-question .chevron {
+            flex-shrink: 0;
+            margin-left: 16px;
+            transition: transform 0.3s;
+            color: #64748B;
+        }
+
+        .faq-item.active .faq-question .chevron {
+            transform: rotate(180deg);
+            color: #D97706;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 0 24px;
+            color: #475569;
+            font-size: 0.938rem;
+            line-height: 1.7;
+        }
+
+        /* ========== FINAL CTA ========== */
+        .final-cta {
+            background: #0F172A;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: #FFFFFF;
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            color: #94A3B8;
+            font-size: 1.125rem;
+            max-width: 680px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        .final-cta .btn-primary {
+            font-size: 1.125rem;
+            padding: 18px 48px;
+        }
+
+        .final-cta .or-link {
+            display: block;
+            margin-top: 16px;
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 0.938rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .final-cta .or-link:hover {
+            color: #FFFFFF;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #0F172A;
+            border-top: 3px solid #D97706;
+            padding: 64px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-col h4 {
+            color: #FFFFFF;
+            font-size: 0.938rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.938rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1E293B;
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom .copyright {
+            color: #64748B;
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom .legal-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom .legal-links a {
+            color: #64748B;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom .legal-links a:hover {
+            color: #CBD5E1;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-bottom .legal-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== MOBILE STICKY CTA ========== */
+        .mobile-sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 997;
+            background: #0F172A;
+            padding: 12px 16px;
+            border-top: 1px solid #1E293B;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+        }
+
+        .mobile-sticky-cta .btn-primary {
+            width: 100%;
+            padding: 14px 24px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-sticky-cta {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">BacklinksServices<span class="dot"></span></a>
+            <ul class="nav-links">
+                <li class="nav-dropdown">
+                    <a href="#services">Services</a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-menu-inner">
+                            <a href="#guest-posts">Guest Posts</a>
+                            <a href="#niche-edits">Niche Edits</a>
+                            <a href="#brand-mentions">Brand Mentions</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#agencies">For Agencies</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#cta" class="nav-cta" data-cta="nav-get-started">Get Started</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services">Services</a>
+        <div class="dropdown-links">
+            <a href="#guest-posts">Guest Posts</a>
+            <a href="#niche-edits">Niche Edits</a>
+            <a href="#brand-mentions">Brand Mentions</a>
+        </div>
+        <a href="#agencies">For Agencies</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#cta" class="nav-cta" data-cta="mobile-get-started" style="text-align:center;margin-top:8px;">Get Started</a>
+    </div>
+
+    <!-- ========== SECTION 1: HERO ========== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Backlinks Services That Actually Move Your Rankings</h1>
+            <p class="subhead">We're the link building agency business owners, marketing managers, and in-house SEOs call when they need real links — without spending months on outreach.</p>
+            <div class="hero-ctas">
+                <a href="#cta" class="btn btn-primary" data-cta="hero-get-free-link-plan">Get Your Free Link Plan</a>
+                <a href="#testimonials" class="btn btn-outline" data-cta="hero-see-sample-links">See Sample Links</a>
+            </div>
+            <div class="hero-trust">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#059669" stroke-width="1.5"/>
+                    <path d="M6 10.5l2.5 2.5L14 7.5" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                12,000+ links placed on real, vetted websites since 2019.
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: TRUST BAR ========== -->
+    <section class="trust-bar" id="trust">
+        <div class="container">
+            <div class="trust-metrics">
+                <div class="trust-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                        </svg>
+                    </div>
+                    <div class="number">12,000+</div>
+                    <div class="label">Links Built</div>
+                </div>
+                <div class="trust-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </div>
+                    <div class="number">4,500+</div>
+                    <div class="label">Sites in Network</div>
+                </div>
+                <div class="trust-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="number">800+</div>
+                    <div class="label">Clients Served</div>
+                </div>
+                <div class="trust-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div class="number">10-Day</div>
+                    <div class="label">Avg. Turnaround</div>
+                </div>
+            </div>
+            <div class="trust-testimonial">
+                "Links went live in 11 days. Rankings jumped within weeks."
+                <span class="author">— Sarah T., Ecommerce Director</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3: THE PROBLEM + SOLUTION ========== -->
+    <section class="problem-solution" id="about">
+        <div class="container">
+            <div class="ps-grid">
+                <div class="ps-col ps-problem">
+                    <h3>The Problem</h3>
+                    <p>You know you need backlinks to rank. But cold-emailing publishers, negotiating placements, and chasing follow-ups eats hundreds of hours you don't have. Most link building services sell you links on spammy PBNs or sites that Google will penalize next quarter.</p>
+                </div>
+                <div class="ps-col ps-solution">
+                    <h3>Our Solution</h3>
+                    <p>Our backlinks services are different. We do real manual outreach to real editors at real websites. Every site is reviewed by a human — not just checked against a spreadsheet of metrics. You get links that last and rankings that stick.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4: SERVICES ========== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Link Building Services</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Guest Posts -->
+                <div class="service-card" id="guest-posts">
+                    <span class="badge">Most Popular</span>
+                    <div class="icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3>Guest Posts</h3>
+                    <p>Fresh articles published on niche-relevant sites with real traffic. Full editorial control, natural anchor text, permanent placement. Our guest post services start at $70/link.</p>
+                    <div class="price">Starting at $70/link</div>
+                    <a href="#cta" class="learn-more" data-cta="learn-guest-posts">Learn More →</a>
+                </div>
+                <!-- Niche Edits -->
+                <div class="service-card" id="niche-edits">
+                    <div class="icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Niche Edits</h3>
+                    <p>Your link placed inside existing articles that already rank on Google. Fast, contextual, and natural-looking. Starting at $90/link.</p>
+                    <div class="price">Starting at $90/link</div>
+                    <a href="#cta" class="learn-more" data-cta="learn-niche-edits">Learn More →</a>
+                </div>
+                <!-- Brand Mentions -->
+                <div class="service-card" id="brand-mentions">
+                    <div class="icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                            <line x1="7" y1="7" x2="7.01" y2="7"/>
+                        </svg>
+                    </div>
+                    <h3>Brand Mentions</h3>
+                    <p>Your brand cited and linked in publications, roundups, and resource pages. Builds authority and referral traffic. Starting at $85/mention.</p>
+                    <div class="price">Starting at $85/mention</div>
+                    <a href="#cta" class="learn-more" data-cta="learn-brand-mentions">Learn More →</a>
+                </div>
+            </div>
+            <p class="services-note">No minimum orders. Buy backlinks services one link at a time, or scale to hundreds per month.</p>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 5: HOW IT WORKS ========== -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How to Get Backlinks in Four Steps</h2>
+            </div>
+            <div class="steps">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Send Us Your URL</h3>
+                    <p>Tell us which pages need links and what keywords you're targeting. We handle everything from there.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>We Find and Vet Sites</h3>
+                    <p>Our team identifies relevant publishers and manually reviews each one for traffic, content quality, and editorial standards.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>You Approve</h3>
+                    <p>You see every website before we place your website backlinks. Reject anything that doesn't fit. No surprises.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h3>Links Go Live, You Get a Report</h3>
+                    <p>We place the links, verify them, and send you a full report. Most clients get backlinks live within 7–14 days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 6: WHY CHOOSE US ========== -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why 800+ Businesses Trust Us</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Manual Quality Vetting</h3>
+                    <p>We don't just filter by DA or traffic numbers. Every site gets reviewed by a real person for content quality, niche relevance, and link profile health. That's how we deliver quality backlinks that Google actually rewards.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>Guaranteed Placement</h3>
+                    <p>If a link gets removed within 12 months, we replace it free. No arguments, no fine print. Your investment is protected from day one.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>You Approve Every Site First</h3>
+                    <p>Full transparency. You review the exact URL, traffic data, and content context before we place anything. Nothing goes live without your sign-off.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Most links go live in 7–14 days. No six-week timelines. No "we'll get back to you" loops. We move fast because our outreach process is already built.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 7: FOR AGENCIES ========== -->
+    <section class="agencies" id="agencies">
+        <div class="container">
+            <h2>Built for Agencies, Too</h2>
+            <p>SEO agency? Resell our links under your brand with white label link building. White-label reports, agency pricing, and dedicated account management.</p>
+            <a href="#cta" class="btn btn-outline" data-cta="agency-program">Learn About Our Agency Program →</a>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 8: INDUSTRIES SERVED ========== -->
+    <section class="industries" id="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Build Links For</h2>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>SaaS</h3>
+                    <p>Build authority in competitive software niches with links from tech publications and review sites.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <h3>Ecommerce</h3>
+                    <p>Drive organic traffic to product and category pages with contextual links from buyer-intent content.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Legal</h3>
+                    <p>Earn placements on authoritative legal directories, news outlets, and educational resources.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3>Health &amp; Wellness</h3>
+                    <p>Secure links from medically-reviewed content and trusted health publications.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h3>Home Services</h3>
+                    <p>Rank locally with links from home improvement blogs, local news, and contractor directories.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Finance</h3>
+                    <p>Build trust signals with placements on fintech, banking, and personal finance websites.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Real Estate</h3>
+                    <p>Get featured on property market blogs, local business publications, and investment resources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 9: TESTIMONIALS + CASE STUDY ========== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real Results From Real Clients</h2>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <blockquote>"We tried three other agencies before finding Backlinks Services. The difference is night and day — real sites, real editors, and links that actually hold. Our organic traffic grew 140% in six months."</blockquote>
+                    <div class="author">James Whitfield</div>
+                    <div class="role">Head of Marketing — ClearPath SaaS</div>
+                </div>
+                <div class="testi-card">
+                    <blockquote>"I approve every site before placement and nothing has ever been low quality. Our category pages moved from page 3 to page 1 for our top five keywords."</blockquote>
+                    <div class="author">Maria Chen</div>
+                    <div class="role">SEO Manager — NovaBuy Ecommerce</div>
+                </div>
+            </div>
+            <div class="case-study">
+                <h3>Mini Case Study: TechFlow (B2B SaaS)</h3>
+                <p>TechFlow came to us with 12 referring domains and zero page-one rankings. Over 90 days, we placed 38 guest posts and 15 niche edits on relevant software and business publications. By day 90, they had 14 page-one rankings, organic traffic grew from 1,200 to 8,400 monthly visits, and demo requests from organic search tripled.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 10: FAQ ========== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <button class="faq-question" aria-expanded="true">
+                        Are your backlinks safe from Google penalties?
+                        <span class="chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 8 10 12 14 8"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Every link we build is placed on a real website with real editorial oversight. We never use PBNs, link farms, or automated placements. Our seo backlinks services focus on contextual links within genuine content — the kind Google's guidelines explicitly endorse. That's why our links hold.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        How do you vet websites before placing links?
+                        <span class="chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 8 10 12 14 8"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Each site goes through a manual review. We check traffic authenticity, content quality, existing link profile, niche relevance, and editorial standards. We reject more sites than we accept. If a site looks spammy or suspicious, it never makes it to your approval list. Quality over quantity, always.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What happens if a link gets removed?
+                        <span class="chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 8 10 12 14 8"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We guarantee every placement for 12 months. If a link drops, we replace it at no cost — no arguments, no fine print. We also run monthly link audits on active campaigns so we catch removals before you even notice. Your investment stays protected.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Can I approve sites before you place my links?
+                        <span class="chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 8 10 12 14 8"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. You review every site — including the URL, traffic data, and content context — before we place your backlinks for website growth. Nothing goes live without your explicit approval. We believe in full transparency, not blind trust. It's your strategy, so you make the final call.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What's your turnaround time?
+                        <span class="chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 8 10 12 14 8"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most links go live within 7–14 days of approval. Complex campaigns or high-volume orders may take slightly longer, but we always give you a clear timeline upfront. Our quality link building services move fast because we maintain active publisher relationships. No waiting six weeks for a single placement.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Do you require a minimum order or contract?
+                        <span class="chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 8 10 12 14 8"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No minimums. No contracts. You can order one high authority backlink or five hundred — whatever your strategy requires. Scale up, scale down, or pause anytime. Our backlink building service earns your business with every order, not with lock-in clauses. Cancel whenever you want.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 11: FINAL CTA ========== -->
+    <section class="final-cta" id="cta">
+        <div class="container">
+            <h2>Ready to Build Links That Actually Rank?</h2>
+            <p>Start with a free link plan. No commitment, no credit card required. If you don't see measurable value in the first 30 days, we'll refund your order in full.</p>
+            <a href="#contact" class="btn btn-primary" data-cta="final-get-free-link-plan">Get Your Free Link Plan</a>
+            <a href="#contact" class="or-link" data-cta="final-talk-to-team">Or talk to our team →</a>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Case Studies</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#guest-posts">Guest Posts</a></li>
+                        <li><a href="#niche-edits">Niche Edits</a></li>
+                        <li><a href="#brand-mentions">Brand Mentions</a></li>
+                        <li><a href="#agencies">White Label</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>For Agencies</h4>
+                    <ul>
+                        <li><a href="#agencies">Agency Program</a></li>
+                        <li><a href="#industries">Industries We Serve</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#">Bulk Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hello@backlinksservices.com">hello@backlinksservices.com</a></li>
+                        <li><a href="#">Book a Call</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2025 BacklinksServices. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== MOBILE STICKY CTA ========== -->
+    <div class="mobile-sticky-cta" id="mobileStickyCta">
+        <a href="#cta" class="btn btn-primary" data-cta="mobile-sticky-get-free-link-plan">Get Your Free Link Plan</a>
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+    (function() {
+        // ===== 1. Sticky Nav =====
+        const nav = document.getElementById('mainNav');
+        let heroBottom = 0;
+
+        function updateHeroBottom() {
+            const hero = document.getElementById('hero');
+            if (hero) {
+                heroBottom = hero.offsetTop + hero.offsetHeight;
+            }
+        }
+        updateHeroBottom();
+        window.addEventListener('resize', updateHeroBottom);
+
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // initial state
+
+        // ===== 2. Mobile Menu =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function openMenu() {
+            hamburger.classList.add('active');
+            mobileMenu.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', function() {
+            if (hamburger.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        mobileOverlay.addEventListener('click', closeMenu);
+
+        // Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // ===== 3. FAQ Accordion =====
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(function(faqItem) {
+                    faqItem.classList.remove('active');
+                    faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Open clicked (if it wasn't already open)
+                if (!isActive) {
+                    item.classList.add('active');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ===== 4. Smooth Scroll for Anchor Links =====
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
+                if (href === '#') return;
+                var target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    var navHeight = nav.offsetHeight + 16;
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== 5. CTA Tracking =====
+        document.querySelectorAll('[data-cta]').forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                var ctaName = this.getAttribute('data-cta');
+                console.log('CTA Clicked:', ctaName, '| Timestamp:', new Date().toISOString());
+            });
+        });
+
+        // ===== 6. Mobile Sticky CTA =====
+        var mobileStickyCta = document.getElementById('mobileStickyCta');
+        function toggleMobileCta() {
+            if (!mobileStickyCta) return;
+            updateHeroBottom();
+            if (window.scrollY > heroBottom - 100) {
+                mobileStickyCta.style.display = 'block';
+            } else {
+                mobileStickyCta.style.display = 'none';
+            }
+        }
+        window.addEventListener('scroll', toggleMobileCta, { passive: true });
+        toggleMobileCta();
+
+        // ===== 7. Card Hover Effects =====
+        // Handled by CSS :hover transitions on .service-card, .trust-card, .why-card, .industry-card, .testi-card
+
+        // ===== Keyboard support for FAQ =====
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // ===== ESC to close mobile menu =====
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+
+    })();
+    </script>
+
+</body>
+</html>
