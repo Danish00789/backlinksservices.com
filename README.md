@@ -20,33 +20,29 @@
 
 ## 🗓️ ROADMAP — kws to cover (2/day)
 
+**Format: Main kw + relevant kws (same intent = 1 article/page). Pick any row → write it.**
+
 **Blog/informational gaps (from mapping doc — not on service pages):**
 
-| # | Keyword | Type | Notes |
+| # | Main kw | Relevant kws (same intent) | Article/Page |
 |---|---|---|---|
-| 1 | backlink building | Blog | "What Is Backlink Building? A Beginner's Guide" |
-| 2 | building backlinks | Blog | same guide (same intent) |
-| 3 | linkbuilding seo | Blog | "Link Building SEO: How It Works in 2026" |
-| 4 | home services backlinks | Blog | "Backlinks for Home Services Websites" |
+| 1 | backlink building | building backlinks | "What Is Backlink Building? A Beginner's Guide" |
+| 2 | linkbuilding seo | link building seo, seo link building guide | "Link Building SEO: How It Works in 2026" |
+| 3 | home services backlinks | backlinks for home services, home services link building | "Backlinks for Home Services Websites" |
+| 4 | how to build backlinks | how to get backlinks, getting backlinks | "How to Build Backlinks (Beginner's Guide)" |
+| 5 | white label link building | white label link building services, white label seo reseller | "White Label Link Building Guide" |
+| 6 | guest posting sites list | guest post sites, sites that accept guest posts | "Guest Posting Sites List" (resource) |
+| 7 | what are niche edits | niche edits explained, how niche edits work | "What Are Niche Edits?" (explainer) |
+| 8 | dofollow vs nofollow backlinks | nofollow vs dofollow, dofollow backlinks explained | "Dofollow vs Nofollow Backlinks" |
+| 9 | link building for new websites | link building for beginners, new site backlinks | "Link Building for New Websites" |
+| 10 | how to get backlinks fast | get backlinks quickly, fast backlinks | "How to Get Backlinks Fast" |
+| 11 | link building case study | link building results, backlink case study | "Link Building Case Study" (proof) |
+| 12 | best link building services | top link building services, link building service review | "Best Link Building Services" (roundup) |
+| 13 | backlink checker tool | free backlink checker, check backlinks | "Backlink Checker" (free tool) |
+| 14 | domain rating checker | dr checker, check domain rating | "Domain Rating Checker" (free tool) |
+| 15 | broken link building guide | broken link building, broken backlinks | "Broken Link Building Guide" |
 
-**Additional blog opportunities (topical authority for link building niche):**
-
-| # | Seed keyword | Type | Notes |
-|---|---|---|---|
-| 5 | how to build backlinks | Blog | beginner how-to (high volume) |
-| 6 | white label link building guide | Blog | white-label explainer |
-| 7 | guest posting sites list | Blog | resource list (high search demand) |
-| 8 | what are niche edits | Blog | explainer |
-| 9 | dofollow vs nofollow backlinks | Blog | comparison (high volume) |
-| 10 | link building for new websites | Blog | beginner guide |
-| 11 | how to get backlinks fast | Blog | how-to |
-| 12 | link building case study | Blog | proof/trust |
-| 13 | best link building services | Blog | roundup (commercial) |
-| 14 | backlink checker tool | Tool page | free tool idea |
-| 15 | domain rating checker | Tool page | free tool (DR checker — we have the API) |
-| 16 | broken link building guide | Blog | advanced tactic |
-
-**≈16 kws (4 real gaps + 12 seed) → 16 articles/pages = 8 days @ 2/day.**
+**15 articles/pages = 8 days @ 2/day (first 3 = real gaps from mapping doc, rest = seed/topical authority).**
 
 ---
 
