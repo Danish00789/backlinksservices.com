@@ -1,0 +1,639 @@
+=== link-building-for-saas/copy.md ===
+  words: 976
+  H1_exact: True
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 12
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does "placement" mean exactly?
+    - How much do SaaS backlinks cost?
+    - How long does delivery take?
+    - Do you offer white-label link building for SaaS agencies?
+    - How do you find niche-relevant sites for SaaS?
+    - Can I use guest posting for SaaS alongside other link building tactics?
+    - What happens if a link goes down?
+
+=== link-building-for-saas/gpt-run1.md ===
+  words: 1119
+  H1_exact: True
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 7
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 2
+  FAQ questions:
+    - How much does SaaS link building cost?
+    - How long does a placement take?
+    - What does “placement” mean?
+    - Do you offer white-label SaaS link building?
+    - How do you determine niche relevance?
+    - Can you guarantee higher rankings?
+    - Do you provide a list of guest posting sites for SaaS?
+
+=== link-building-for-small-businesses/copy.md ===
+  words: 1142
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: False
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 19
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does "placement" actually mean?
+    - How much do your link building services for small business cost?
+    - How long does it take to receive my links?
+    - What if a link gets removed?
+    - Is this service white-label? Can I resell it?
+    - How do you pick which sites to use?
+    - Will one or two links actually move my rankings?
+
+=== link-building-for-small-businesses/gpt-run1.md ===
+  words: 1176
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 6
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - How much do your small business backlinks cost?
+    - What does “placement” mean?
+    - How long does the process take?
+    - Is there a minimum order?
+    - How do you choose niche-relevant websites?
+    - Do you offer local link building for small business websites?
+    - Can you guarantee rankings or leads?
+
+=== link-building-for-ecommerce/copy.md ===
+  words: 1157
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: False
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: False
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 15
+  faq_count: 6
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does "placement" mean exactly?
+    - How much do ecommerce link building services cost?
+    - How long does it take to get a link placed?
+    - Do you build backlinks for Shopify stores specifically?
+    - What is the white-label option and who is it for?
+    - How do I know if the links are actually helping my rankings?
+
+=== link-building-for-ecommerce/gpt-run1.md ===
+  words: 1217
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 5
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - How much do ecommerce link building services cost?
+    - What does a “placement” mean?
+    - How long does an order take?
+    - Can you build backlinks for a Shopify store?
+    - How do you determine niche relevance?
+    - Do you offer guest post ecommerce placements?
+    - Is there a minimum order?
+
+=== link-building-for-local-seo/copy.md ===
+  words: 1096
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: False
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 13
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What is a local link building service?
+    - How much do your backlinks for local SEO cost?
+    - What does "placement" actually mean?
+    - How long does it take?
+    - Do you guarantee the links will stay live?
+    - Can I use this service if I run an SEO agency?
+    - Will these links help with guest posting on local blogs specifically?
+
+=== link-building-for-local-seo/gpt-run1.md ===
+  words: 1038
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 6
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What is a local link building service?
+    - How much do your backlinks for local SEO cost?
+    - What does “placement” mean?
+    - How long does a placement take?
+    - Are all placements on local websites?
+    - Do you offer white-label local link building services?
+    - Should I choose a back link building agency near me?
+
+=== link-building-for-b2b/copy.md ===
+  words: 1146
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: False
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 16
+  faq_count: 8
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What exactly is a "placement"?
+    - How much does B2B link building cost?
+    - How long does a placement take?
+    - Do you do guest posts for B2B niches?
+    - What if a link gets removed?
+    - Can I use this as a white-label link building service for my agency clients?
+    - How do you pick which sites to place links on?
+    - Do you write the articles?
+
+=== link-building-for-b2b/gpt-run1.md ===
+  words: 994
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 5
+  faq_count: 8
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does one “placement” include?
+    - How much does B2B link building cost?
+    - How long does a placement take?
+    - Is there a minimum order?
+    - How do you determine niche relevance?
+    - Do you offer guest post B2B placements?
+    - Can a B2B SEO agency outsource content creation and link building?
+    - What happens if my backlink is removed?
+
+=== link-building-for-contractors/copy.md ===
+  words: 1229
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: False
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: False
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: False
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 21
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does "placement" mean exactly?
+    - What's the turnaround time?
+    - How much do links cost?
+    - Do you build links specifically for trades businesses — plumbers, HVAC, roofers?
+    - Is this white-label? Can I resell these links to my clients?
+    - Will these links hurt my site?
+    - What information do I need to provide to get started?
+
+=== link-building-for-contractors/gpt-run1.md ===
+  words: 1205
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 1
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - How much do contractor backlinks cost?
+    - How long does a placement take?
+    - What does “placement” mean?
+    - Can I buy backlinks for plumbers without a large order?
+    - Do you offer white-label HVAC link building?
+    - Are all placements on plumbing, HVAC or roofing websites?
+    - Can backlinks guarantee higher rankings?
+
+=== link-building-for-law-firms/copy.md ===
+  words: 1159
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 18
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does "placement" mean exactly?
+    - How much do backlinks for lawyers cost?
+    - How long does it take to receive my links?
+    - Do you offer guest posting for law firms specifically?
+    - What happens if a link is removed?
+    - Is there a minimum order?
+    - Will these links actually help my law firm rank?
+
+=== link-building-for-law-firms/gpt-run1.md ===
+  words: 966
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 8
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does “placement” mean?
+    - How much does law firm link building cost?
+    - How long does placement take?
+    - Can I buy backlinks for lawyers without a monthly contract?
+    - Are all placements on law-only websites?
+    - Do you offer white-label backlinks for law firm clients?
+    - Can you guarantee rankings from backlinks for lawyers?
+
+=== backlink-audit/copy.md ===
+  words: 1030
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 13
+  faq_count: 8
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does a backlink audit service actually include?
+    - How much does a backlink audit service cost?
+    - How long does the audit take?
+    - What does a "placement" mean?
+    - Do you guarantee the links stay live?
+    - What is the minimum for white-label reporting?
+    - How is your backlink analysis service different from using a tool like Ahrefs myself?
+    - Can you audit a competitor's backlink profile?
+
+=== backlink-audit/gpt-run1.md ===
+  words: 1149
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: False
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 3
+  faq_count: 5
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What do your backlink audit services include?
+    - How much does a backlink placement cost?
+    - What does “placement” mean?
+    - How long does the service take?
+    - Do you guarantee that toxic links will be removed?
+
+=== managed-link-building/copy.md ===
+  words: 1018
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 8
+  faq_count: 8
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does "managed link building service" actually include?
+    - How much does it cost?
+    - What is your turnaround time?
+    - What does "placement" mean exactly?
+    - How do you ensure niche relevance?
+    - Is this service white-label? Can I resell it?
+    - What happens if a link goes down?
+    - Do you work in any niche?
+
+=== managed-link-building/gpt-run1.md ===
+  words: 938
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 6
+  faq_count: 7
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What is included in your managed link building service?
+    - How much does the service cost?
+    - What is the turnaround time?
+    - What does “placement” mean?
+    - How do you determine niche relevance?
+    - Do you offer white-label link building?
+    - What should I expect from a backlink outreach company?
+
+=== link-building-consultant/copy.md ===
+  words: 1187
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 12
+  faq_count: 8
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does a link building consultant actually do?
+    - How much does link building consulting cost?
+    - How long does it take to get a link placed?
+    - What does "placement" mean — is it a sponsored post?
+    - Do you guarantee niche relevance?
+    - Is there a minimum order?
+    - What happens if a link gets removed?
+    - Can I hire you as a link building consultant on an ongoing basis?
+
+=== link-building-consultant/gpt-run1.md ===
+  words: 1140
+  H1_exact: False
+  meta_block: True
+  price_70_95_135: True
+  dr_tiers: True
+  all_tiers_include: True
+  700+_article: True
+  anchor_url_ctrl: True
+  dofollow: True
+  tat_2wk: True
+  free_replacement: True
+  trust_no_invent: True
+  whitelabel_min10: True
+  no_min_direct: True
+  email_cta: True
+  cta_order: True
+  cta_quote: True
+  scenario_hook: True
+  em_dash_count: 3
+  faq_count: 4
+  forbidden_whatis: False
+  guest_sites_primary_count: 0
+  FAQ questions:
+    - What does a link building consultant do?
+    - How much does link building consulting cost?
+    - How long does a placement take?
+    - What does “placement” mean?
+
