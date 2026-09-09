@@ -395,9 +395,17 @@
         btn.disabled = true;
         var data = new FormData(form);
         data.set('_replyto', form.querySelector('[name="email"]').value);
-        fetch(form.action, { method: 'POST', body: data })
-          .then(function(r){
-            if(r.ok){
+        // FormSubmit AJAX endpoint: JSON body (multipart to the plain endpoint is rejected in-browser)
+        var payload = {};
+        data.forEach(function(v, k){ payload[k] = v; });
+        fetch('https://formsubmit.co/ajax/hello@backlinksservices.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+          .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
+          .then(function(res){
+            if(res.ok && res.j && res.j.success !== 'false'){
               form.style.display = 'none';
               document.getElementById('formSuccess').style.display = 'block';
             } else {
