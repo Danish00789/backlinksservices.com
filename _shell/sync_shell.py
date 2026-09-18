@@ -33,7 +33,7 @@ SKIP_DIRS = {"_shell", ".git", "node_modules", "dist", ".astro", "backup", "back
              "service-page-training-record", "LBHQ Ops. Batch Analysis", "content-drafts"}
 
 # individual files never touched (e.g. live orphan duplicates awaiting a decision)
-SKIP_FILES = {"backlinks-services-homepage.html"}
+SKIP_FILES = set()
 
 PAGE_GLOB = ".html"
 

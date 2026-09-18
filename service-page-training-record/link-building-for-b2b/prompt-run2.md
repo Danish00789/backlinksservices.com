@@ -1,12 +1,11 @@
 You are a conversion copywriter for BacklinksServices.com, a link building agency selling white-label + direct backlink services. Write the complete copy for a new service page.
 
-PAGE: /<slug>/
-MAIN KEYWORD: <main keyword>
-PRIMARY TARGETS (use naturally, do not stuff): <relevant keywords>
-Do NOT target informational/buyer-mismatch queries as primary (e.g. "what is X", "free X") — only as a brief FAQ/section mention at most.
+PAGE: /link-building-for-b2b/
+MAIN KEYWORD: b2b link building agency
+PRIMARY TARGETS (use naturally, do not stuff): b2b link building agency, b2b seo agency content creation link building, guest post b2b
+CRITICAL: Do NOT target 'link building for seo agencies' — that's the white-label page's keyword (cannibalization).
 
-H1 (exact): <H1 from verified kw map>
-
+H1 (exact): B2B Link Building Agency — Backlinks for B2B Companies
 STYLE (match guest-post-services.html tone):
 - Commercial, benefits-driven, confident but honest. NO hype words (game-changer, seamless, unlock, elevate). NO fake testimonials, NO fake stats, NO invented numbers.
 - Open with a scenario/trust hook: put the reader in a real moment (the ranking that stalls, the competitor that keeps climbing) then name the fix. Use SHORT, punchy, confident sentences. 2-3 sentences max for the hook. **Tone target (punchy + confident, like):** "Your product is solid. Your content is live. But the ranking chart flatlines while a competitor with a weaker tool climbs past you every week." Avoid explanatory openings — hit the reader with a concrete moment first.
@@ -25,4 +24,5 @@ STYLE (match guest-post-services.html tone):
   7. FINAL CTA: clear action ("Order your links" / "Get a custom quote") + contact hello@backlinksservices.com
 - Keep paragraphs short (<60 words). Use headers per section. Include the main keyword + primary targets naturally in H1, headers, body, FAQ. No walls of text.
 - Output the full page copy as structured text (H1, section headings, body copy, pricing block, FAQ Q&A, CTA). This is COPY, not HTML — no markup needed beyond clear section headers.
-- Include a META block at top: meta_title (keyword-first, <60 chars), meta_description (<155 chars), page URL (/<slug>/).
+- Include a META block at top: meta_title (keyword-first, <60 chars), meta_description (<155 chars), page URL (/link-building-for-b2b/).
+

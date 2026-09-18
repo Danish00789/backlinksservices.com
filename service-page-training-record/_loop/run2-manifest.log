@@ -1,0 +1,17 @@
+[14:54:23] START link-building-for-ecommerce
+[14:55:07] DONE link-building-for-ecommerce exit=0 elapsed=45s bytes=7143
+[14:55:10] START link-building-for-local-seo
+[14:56:10] DONE link-building-for-local-seo exit=0 elapsed=60s bytes=5559
+[14:56:12] START link-building-for-b2b
+[14:56:45] DONE link-building-for-b2b exit=0 elapsed=33s bytes=5406
+[14:56:48] START link-building-for-contractors
+[14:57:38] DONE link-building-for-contractors exit=0 elapsed=50s bytes=8060
+[14:57:40] START link-building-for-law-firms
+[14:58:14] DONE link-building-for-law-firms exit=0 elapsed=34s bytes=7074
+[14:58:16] START backlink-audit
+[14:58:51] DONE backlink-audit exit=0 elapsed=35s bytes=5007
+[14:58:53] START managed-link-building
+[14:59:40] DONE managed-link-building exit=0 elapsed=47s bytes=6606
+[14:59:43] START link-building-consultant
+[15:00:42] DONE link-building-consultant exit=0 elapsed=59s bytes=6455
+[15:00:44] ALL DONE

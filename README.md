@@ -1,6 +1,6 @@
 # BacklinksServices.com (LinkBuilding Agency)
 
-**White-label link building services** — Guest Posts, Niche Edits, Brand Mentions. Backlinks for SEO agencies & direct clients (white-label min 10 links, non-agency no minimum).
+**White-label link building services** — Guest Posts, Niche Edits, Brand Mentions. Backlinks for SEO agencies & direct clients (white-label min 15 links, non-agency no minimum).
 
 **Stack:** Vanilla HTML/CSS/JS · GitHub → Cloudflare deploy
 **Status:** ✅ LIVE — homepage + 3 service pages + legal
@@ -50,7 +50,7 @@
 | 8 | tech link building agency | guest post tech blogs, guest blogging technology, guest posting sites for technology, backlink building techniques | /link-building-for-tech-startups/ | 40 | 0 |
 | 9 | link building for ai search | link building ai tool, backlinks ai agent, backlinks ai generator, link building ai, guest post ai tools, link building for ai search | /link-building-for-ai-search/ | emerging | 0 |
 | 10 | haro link building agency | high pr link building service, digital pr link building agency, pr link building service, digital pr firms for link building | /digital-pr-link-building/ | 750 | 3-31 |
-| 11 | backlink audit services | backlink audit service, backlink audit consultant, backlink analysis services | /backlink-audit/ | 500 | 1-2 |
+| 11 | backlink audit services | backlink audit service, backlink audit consultant, backlink analysis services | /backlink-audit/ ⏸️ REMOVED | 500 | 1-2 |
 | 12 | managed link building service | backlink outreach service, backlink outreach company, link building outreach agency, monthly backlink service, link building outreach service, manual link building services, manual link building | /managed-link-building/ | 1,020 | 6-15 |
 | 13 | link building consultant | link building consulting, hire link building consultants, hire link building expert, internet backlink expert witness | /link-building-consultant/ | 490 | 1-18 |
 | 14 | high authority backlinks service | high authority link building service | /high-authority-backlinks/ | 320 | — |
@@ -87,11 +87,50 @@
 
 ---
 
+## ⏸️ PENDING PAGES (recorded 2026-09-15 — not built / removed)
+
+These were dead footer links (`href="#"`) or deleted pages. The dummy anchors were **removed**
+from the footer on 2026-09-15; restore each link once its page exists.
+
+| Page | Status | Why it's pending |
+|---|---|---|
+| `/blog/` | ❌ not built | Footer "Blog" link was a dead `#`. Build the 15 blog posts in the roadmap above, then restore the link. |
+| `/privacy-policy/` | ❌ not built | Dead `#` link. Needed for legal + ad-network / trust requirements. |
+| `/terms-of-service/` | ❌ not built | Dead `#` link. Same as above. |
+| `/refund-policy/` | ❌ not built | Dead `#` link. Important: the service pages promise a first-order money-back guarantee, so this page is a **claims/legal requirement**, not just polish. |
+| `/backlink-audit/` | ⏸️ REMOVED (page deleted) | The page showed **guest-post pricing** while the copy + FAQs sold **link building**. Deleted rather than left inconsistent. Rebuild as a true audit page: audit-specific pricing (or "request an audit" CTA), and rewrite content + FAQs around *auditing* a link profile (toxic links, disavow, competitor gap) — not selling placements. |
+| `/backlinks-services-homepage/` | ⏸️ REMOVED (page deleted) | Was a **live duplicate homepage** (HTTP 200, no internal links to it). Duplicate-content risk. Deleted 2026-09-15. |
+
+## 🧩 Shared header/footer (added 2026-09-15)
+
+The site previously carried a **separate copy of the header and footer in every page**, so they
+drifted — the homepage footer gained links the other pages never got, and the homepage nav had 8
+service links vs 4 elsewhere.
+
+Now there is one source of truth:
+
+```
+_shell/header.html     the <header> used by every page
+_shell/footer.html     the <footer> used by every page
+_shell/sync_shell.py   --extract <homepage> | --sync | --check
+```
+
+To change the nav or footer on **all** pages: edit the template, then run
+
+```bash
+python _shell/sync_shell.py --sync      # writes every page
+python _shell/sync_shell.py --check     # reports drift, writes nothing
+```
+
+Pages carry `<!-- SHELL:HEADER START -->` markers after the first sync, so `--sync` only rewrites
+the shell region and never clobbers hand edits in the page body. Never hand-edit a header/footer
+inside a page again — edit the template.
+
 ## 🛠️ Build
 ```bash
 # static site — no build step
 ```
-Structure: `public/` (index.html + guest-posts/niche-edits/brand-mentions + legal), root = docs.
+Structure: HTML files live at the **repo root** (index.html, guest-post-services.html, … + legal + `_shell/`).
 
 ## ✅ QA
 - 4 pages cover 63 kws (homepage absorbs broad terms, services claim specific)
